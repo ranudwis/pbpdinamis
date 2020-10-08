@@ -12,4 +12,6 @@ class Post extends Model
     protected $table = 'post';
 
     protected $primaryKey = 'idpost';
+
+    protected $timestamps = false;
 }

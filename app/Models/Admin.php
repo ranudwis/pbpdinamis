@@ -12,4 +12,6 @@ class Admin extends Model
     protected $table = 'admin';
 
     protected $primaryKey = 'idadmin';
+
+    public $timestamps = false;
 }

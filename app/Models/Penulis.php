@@ -12,4 +12,6 @@ class Penulis extends Model
     protected $table = 'penulis';
 
     protected $primaryKey = 'idpenulis';
+
+    public $timestamps = false;
 }
