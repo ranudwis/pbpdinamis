@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AuthenticationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::method
+
+// Rute (url), View
+Route::view('login', 'login');
+// Rute (url), [ClassController::class, method]
+Route::post('login', [AuthenticationController::class, 'login']);
+
+Route::view('homepage', 'homepage');
