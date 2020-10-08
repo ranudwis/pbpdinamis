@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Admin;
+use Illuminate\Http\Request;
 
 class AuthenticationController extends Controller
 {
     public function login(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
-        $nama = $request->nama;
+        $emailPassword = $request->only('email', 'password');
 
-        // where('nama kolom', 'nilai kolom yang dicari')
-        // SELECT * from admin where nama = $nama
-        $admin = Admin::where('nama', $nama)->get();
+        if (auth()->attempt($emailPassword)) {
+            // Redirect ke halaman dashboard masing masing
+            return redirect()->intended('dashboard');
+        }
 
-
-        return redirect('homepage');
+        return back();
     }
 }
