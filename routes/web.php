@@ -26,4 +26,4 @@ Route::view('login', 'login');
 // Rute (url), [ClassController::class, method]
 Route::post('login', [AuthenticationController::class, 'login']);
 
-Route::view('homepage', 'homepage');
+Route::view('daftar', 'daftar');
