@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EditProfilePenulisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
+
+Route::post('/penulis/editprofile', [EditProfileController::class, 'simpan']);
+
