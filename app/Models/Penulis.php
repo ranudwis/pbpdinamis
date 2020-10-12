@@ -14,4 +14,9 @@ class Penulis extends Model
     protected $primaryKey = 'idpenulis';
 
     public $timestamps = false;
+
+    public function post()
+    {
+        return $this->hasMany(Post::class, 'idpenulis', 'idpenulis');
+    }
 }
