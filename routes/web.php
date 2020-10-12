@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EditProfilePenulisController;
 
 use App\Http\Controllers\AuthenticationController;
 
@@ -19,6 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
+
+Route::post('/penulis/editprofile', [EditProfileController::class, 'simpan']);
+
+
 // Route::method
 
 // Rute (url), View
@@ -27,3 +35,4 @@ Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 
 Route::view('daftar', 'daftar');
+
