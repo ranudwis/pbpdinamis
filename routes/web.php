@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EditProfilePenulisController;
+use App\Http\Controllers\DaftarPostinganPenulisController;
 
 use App\Http\Controllers\AuthenticationController;
 
@@ -24,7 +25,7 @@ Route::get('/', function () {
 
 Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
 
-Route::post('/penulis/editprofile', [EditProfileController::class, 'simpan']);
+Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
 
 
 // Route::method
