@@ -9,7 +9,7 @@ class EditProfilePenulisController extends Controller
     public function tampilFormEdit() {
     	$penulis = auth()->user()->penulis;
 
-    	return view('edit_profile_penulis', compact('penulis'));
+    	return view('edit_profil', compact('penulis'));
     }
 
 	public function simpan() {
@@ -17,8 +17,8 @@ class EditProfilePenulisController extends Controller
 		'nama' => ['required', 'max:30'],
 		'body' => ['required'],
 		'notelp' => ['required', 'max:12'],
-		'email' => 'required|email',
-		'password'=> 'required|password',
+		'email' => ['required|email'],
+		'password'=> ['required|password'],
 	]);
 
 	$penulis = auth()->user()->penulis;

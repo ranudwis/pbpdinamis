@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <!-- jQuery library -->
     <script src="jquery.min.js"></script>
-    <script src="bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     <title>Mengubah profil penulis</title>
     <style>
