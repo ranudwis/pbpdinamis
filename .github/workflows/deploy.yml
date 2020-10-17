@@ -1,0 +1,33 @@
+name: Deploy
+
+on: push
+
+jobs:
+  deploy:
+    name: Deploying
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Installing rclone
+        run: curl https://rclone.org/install.sh | sudo bash
+
+      - name: Deploying
+        env:
+          RCLONE_CONFIG_PBPDINAMIS_TYPE: ftp
+          RCLONE_CONFIG_PBPDINAMIS_PORT: 21
+          RCLONE_CONFIG_PBPDINAMIS_TLS: false
+          RCLONE_CONFIG_PBPDINAMIS_HOST: ${{ secrets.PBPDINAMIS_FTP_HOST }}
+          RCLONE_CONFIG_PBPDINAMIS_USER: ${{ secrets.PBPDINAMIS_FTP_USER }}
+          RCLONE_CONFIG_PBPDINAMIS_PASS: ${{ secrets.PBPDINAMIS_FTP_PASS }}
+        run: 'rclone copy -L --check-first --exclude public/ --exclude .git/ --exclude ./vendor/ --transfers 5 --checkers 5 ./ pbpdinamis:'
+
+      - name: Deploying public folder
+        env:
+          RCLONE_CONFIG_PBPDINAMIS_TYPE: ftp
+          RCLONE_CONFIG_PBPDINAMIS_PORT: 21
+          RCLONE_CONFIG_PBPDINAMIS_TLS: false
+          RCLONE_CONFIG_PBPDINAMIS_HOST: ${{ secrets.PBPDINAMIS_FTP_HOST }}
+          RCLONE_CONFIG_PBPDINAMIS_USER: ${{ secrets.PBPDINAMIS_FTP_USER }}
+          RCLONE_CONFIG_PBPDINAMIS_PASS: ${{ secrets.PBPDINAMIS_FTP_PASS }}
+        run: 'rclone copy -L --check-first --transfers 5 --checkers 5 ./public pbpdinamis:public_html/'
