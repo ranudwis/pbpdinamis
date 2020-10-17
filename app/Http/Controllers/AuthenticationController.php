@@ -17,6 +17,10 @@ class AuthenticationController extends Controller
         $emailPassword = $request->only('email', 'password');
 
         if (auth()->attempt($emailPassword)) {
+            if (auth()->user()->penulis) {
+                return redirect()->intended('penulis');
+            }
+
             // Redirect ke halaman dashboard masing masing
             return redirect()->intended('dashboard');
         }

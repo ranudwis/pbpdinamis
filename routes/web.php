@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\EditProfilePenulisController;
 use App\Http\Controllers\DaftarPostinganPenulisController;
 
@@ -36,4 +37,4 @@ Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 
 Route::view('daftar', 'daftar');
-
+Route::post('daftar', [RegistrationController::class, 'register']);
