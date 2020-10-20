@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
-  <!-- jQuery library -->
-  <script src="jquery.min.js"></script>
-  <script src="bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+ <!-- jQuery library -->
+ <script src="jquery.min.js"></script>
+ <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+ <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
   <title>Daftar postingan penulis</title>
   <style>
     img {
@@ -77,18 +77,20 @@
   <div class="container">
     <div class="row">
       @foreach ($post as $p)
-          <div class="col-md-4">
-              <div class="single-blog-item">
-                <span class="blog-date">May 03, 2015</span>
-                <br><br>
-                    <div class="blog-content">
-                      <h4><a href="#">Lorem ipsum dolor sit amet</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint expedita exercitationem nostrum, eligendi quis, esse quos atque in molestias animi.</p>
-                      <button name="edit" class="btn btn-primary">Edit</button>
-                      <button name="hapus" class="btn btn-danger">Hapus</button>
-                    </div>
-                </div>
-            </div>
-          @endforeach
+      <div class="col-md-4">
+        <div class="single-blog-item">
+          <div class="blog-thumnail">
+            <a href=""><img src="{{ Storage::url($p->gambar) }}" alt="blog-img" style="height: 50%"></a>
+          </div>
+          <div class="blog-content">
+            <h4><a href="#">{{ $p->judul }}</a></h4>
+            <p>{{ $p->isipost }}</p>
+            <button name="edit" class="btn btn-primary">Edit</button>
+            <button name="hapus" class="btn btn-danger">Hapus</button>
+          </div>
+          <span class="blog-date">{{ $p->tgl_insert }}</span>
+        </div>
+      </div>
+      @endforeach
 </body>
 </html>

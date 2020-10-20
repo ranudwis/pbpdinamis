@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\EditProfilePenulisController;
 use App\Http\Controllers\DaftarPostinganPenulisController;
+use App\Http\Controllers\TambahPostinganPenulisController;
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
@@ -21,9 +22,13 @@ use App\Http\Controllers\home;
 
 
 Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
+Route::post('/penulis/editprofile', [EditProfilePenulisController::class, 'simpan']);
 
 Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
 
+Route::get('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'formTambah']);
+
+Route::post('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'tambahPost']);
 
 // Route::method
 

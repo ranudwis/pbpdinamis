@@ -11,4 +11,8 @@ class DaftarPostinganPenulisController extends Controller
 
     	return view('daftar_postingan', compact('post'));
     }
+
+    public function tambahPostingan() {
+    	
+    }
 }

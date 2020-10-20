@@ -19,4 +19,8 @@ class Post extends Model
     {
         return $this->belongsTo(Penulis::class, 'idpenulis', 'idpenulis');
     }
+
+    public function kategori() {
+    	return $this->belongsTo(Kategori::class, 'idkategori', 'idkategori');
+	}
 }

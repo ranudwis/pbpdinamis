@@ -58,9 +58,8 @@
                             </div>
                         </div>
                     </div>
-                    <span class="font-weight-bold">Setiyoningsih</span>
-                    <span class="text-black-50">Setiyoningsih0@gmail.com</span>
-                    <span>Indonesia</span>
+                    <span class="font-weight-bold">{{ $user->nama }}</span>
+                    <span class="text-black-50">{{ $user->email }}</span>
                     <button class="btn btn-primary" type="button">
                         <i class="fa fa-fw fa-camera"></i>
                         <span>Change Photo</span>
@@ -76,20 +75,28 @@
                     </div>
                     <h6 class="text-right">Edit Profile</h6>
                 </div>
+                @if ($errors->any())
+                    @foreach($errors->all() as $error)
+                        <div>
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
                 <form method="post" action="{{ url('/penulis/editprofile') }}">
+                    @csrf
                     <div class="row mt-2">
-                        <div class="col-md-6"><input type="text" class="form-control" name="nama" placeholder="Full name" value="{{ $penulis->nama }}"></div>
-                        <div class="col-md-6"><input type="text" class="form-control" name="notelp" placeholder="Phone number" value="{{ $penulis->no_telp }}"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" name="nama" placeholder="Full name" value="{{ $user->nama }}"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" name="no_telp" placeholder="Phone number" value="{{ $penulis->no_telp }}"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6"><input type="text" class="form-control" name="email" placeholder="Email" value="{{ $penulis->email }}"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" name="email" placeholder="Email" value="{{ $user->email }}"></div>
                         <div class="col-md-6"><input type="text" class="form-control" name="password" placeholder="Password" value="{{ $penulis->password }}"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6"><input type="text" class="form-control" name="alamat" placeholder="Address" value="{{ $penulis->alamat }}"></div>
-                        <div class="col-md-6"><input type="text" class="form-control" name="kota" placeholder="City" value="{{ $penulis->kota }}"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" name="alamat" placeholder="Alamat" value="{{ $penulis->alamat }}"></div>
+                        <div class="col-md-6"><input type="text" class="form-control" name="kota" placeholder="Kota" value="{{ $penulis->kota }}"></div>
                     </div>
-                    <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                    <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
                 </form>
             </div>
         </div>
