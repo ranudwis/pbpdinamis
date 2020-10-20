@@ -13,6 +13,8 @@ class Penulis extends Model
 
     protected $primaryKey = 'idpenulis';
 
+    protected $fillable = ['alamat', 'kota', 'no_telp'];
+
     public $timestamps = false;
 
     public function post()
