@@ -8,8 +8,8 @@
     <script src="bs/popper.min.js"></script>
     <script src="bs/js/bootstrap.min.js"></script>
 	<link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ asset('logindaftar/style.css') }}">
-	<title>@yield('title')</title>
+	<link rel="stylesheet" type="text/css" href="{{ asset('admin/style.css') }}">
+	<title>Dashboard Admin</title>
 </head>
 <body>
     @if ($errors->any())

@@ -1,6 +1,6 @@
 @extends('partial.auth')
 
-@section('Masuk')
+@section('title', 'Masuk')
 
 @section('content')
 	<div class="card">

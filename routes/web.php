@@ -38,3 +38,10 @@ Route::post('login', [AuthenticationController::class, 'login']);
 
 Route::view('daftar', 'daftar');
 Route::post('daftar', [RegistrationController::class, 'register']);
+
+//admin
+Route::view('admin/data_kategori','admin.data_kategori');
+Route::view('admin/data_penulis','admin.data_penulis');
+Route::view('admin/edit_profil','admin.edit_profil');
+Route::view('admin/dashboard_admin','admin.dashboard_admin');
+
