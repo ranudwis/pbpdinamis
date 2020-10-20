@@ -21,4 +21,9 @@ class Penulis extends Model
     {
         return $this->hasMany(Post::class, 'idpenulis', 'idpenulis');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -14,4 +14,9 @@ class Post extends Model
     protected $primaryKey = 'idpost';
 
     public $timestamps = false;
+
+    public function penulis()
+    {
+        return $this->belongsTo(Penulis::class, 'idpenulis', 'idpenulis');
+    }
 }
