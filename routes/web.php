@@ -6,6 +6,7 @@ use App\Http\Controllers\EditProfilePenulisController;
 use App\Http\Controllers\DaftarPostinganPenulisController;
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\home;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,6 @@ use App\Http\Controllers\AuthenticationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 
 Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
@@ -45,3 +41,5 @@ Route::view('admin/data_penulis','admin.data_penulis');
 Route::view('admin/edit_profil','admin.edit_profil');
 Route::view('admin/dashboard_admin','admin.dashboard_admin');
 
+//homepage
+Route::get('/', [home::class, 'lihat']);
