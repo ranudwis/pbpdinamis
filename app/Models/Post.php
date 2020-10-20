@@ -14,4 +14,9 @@ class Post extends Model
     protected $primaryKey = 'idpost';
 
     public $timestamps = false;
+
+    public function kategori() {
+    	return $this->belongsTo(Kategori::class, 'idkategori', 'idkategori');
+	}
+
 }

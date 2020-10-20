@@ -3,33 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EditProfilePenulisController extends Controller
 {
     public function tampilFormEdit() {
-    	$penulis = auth()->user()->penulis;
-
-    	return view('edit_profil', compact('penulis'));
+    	$user = auth()->user();
+    	$penulis = $user->penulis;
+    	
+    	return view('edit_profil', compact('user', 'penulis'));
     }
 
-	public function simpan() {
+	public function simpan(Request $request) {
 	$request->validate([
 		'nama' => ['required', 'max:30'],
-		'body' => ['required'],
-		'notelp' => ['required', 'max:12'],
-		'email' => ['required|email'],
-		'password'=> ['required|password'],
+		'no_telp' => ['required', 'max:12'],
+		'email' => ['required','email'],
+		'password'=> ['nullable'],
 	]);
 
-	$penulis = auth()->user()->penulis;
-	$penulis->nama = $request->nama;
-	$penulis->notelp = $request->notelp;
-	$penulis->email = $request->email;
-	$penulis->password = $request->password;	
+	$user = auth()->user();
+	$penulis = $user->penulis;
+	$user->nama = $request->nama;
+	$penulis->no_telp = $request->no_telp;
+	$user->email = $request->email;
+	if ($request->password) {
+		$user->password = Hash::make($request->password);
+	}
 	$penulis->alamat = $request->alamat;
 	$penulis->kota = $request->kota;
 
 	$penulis->save();
+	$user->save();
 	return back();
 	}
 
