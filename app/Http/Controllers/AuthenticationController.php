@@ -20,7 +20,7 @@ class AuthenticationController extends Controller
             if (auth()->user()->penulis) {
                 return redirect()->intended('/penulis/dashboard');
             }
-            if (auth()->user()->admin) {
+            else if (auth()->user()->admin) {
                 return redirect()->intended('/admin/dashboard');
             }
 

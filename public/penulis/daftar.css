@@ -1,60 +1,65 @@
-    img {
-      width: 100%;
-      height: auto;
-    }
+body {
+    background: rgb(36, 139, 139);
+    font-size: 18px;
+}
 
-    .single-blog-item {
-      border: 1px solid #dfdede;
-        box-shadow: 2px 5px 10px #dfdede;
-        margin: 15px auto;
-        padding: 5px;
-        position: relative;
-    }
+img {
+    width: 100%;
+    height: auto;
+}
 
-    .blog-content {
-        padding: 15px;
-    }
+.single-blog-item {
+    border: 1px solid #dfdede;
+    box-shadow: 2px 5px 10px #dfdede;
+    margin: 15px auto;
+    padding: 5px;
+    position: relative;
+}
 
-    .blog-content h4 {
-        font-size: 16px;
-        font-weight: 500;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-    }
+.blog-content {
+    padding: 15px;
+}
 
-    .blog-content h4 a{
-      color:#777;
-    }
+.blog-content h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
 
-    .blog-content p{
-        color: #999;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 1.3333;
-    }
+.blog-content h4 a{
+    color: white;
+}
 
-    .blog-date{
-    }
+.blog-content p{
+    color: black;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.3333;
+}
 
-    .blog-date {
-        position: absolute;
-        background: #337ab7;
-        top: 35px;
-        left: 5px;
-        color: #fff;
-        border-radius: 0 25px 25px 0;
-        padding: 5px 15px;
-        font-weight: 700;
-    }
+.blog-date{
+}
 
-    .more-btn {
-      background: #337ab7;
-      border-radius: 2px;
-      display: block;
-        height: 30px;
-        line-height: 30px;
-        margin: 30px auto auto auto;
-        text-align: center;
-        width: 110px;
-        color: #f1f1f1;
-    }
+.blog-date {
+    position: absolute;
+    background: rgb(250, 188, 150);
+    top: 35px;
+    left: 5px;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    padding: 5px 15px;
+    font-weight: 700;
+}
+
+.more-btn {
+    background: #337ab7;
+    border-radius: 2px;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    margin: 30px auto auto auto;
+    text-align: center;
+    width: 110px;
+    color: #f1f1f1;
+}

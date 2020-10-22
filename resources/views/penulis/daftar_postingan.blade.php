@@ -18,14 +18,14 @@
                 </div>
 
                 <div class="blog-content">
-                <h5><a href="#">{{ $p->judul }}</a></h5>
-                <p>{{ $p->isipost }}</p>
-                <a href="/penulis/edit/{{ $p->idpost }}"><button name="edit" class="btn btn-primary">Edit</button></a>
-                <a href="/penulis/hapus/{{ $p->idpost }}"><button name="hapus" class="btn btn-danger">Hapus</button></a>
+                    <h4><a href="#">{{ $p->judul }}</a></h4>
+                    <p>{{ $p->isipost }}</p>
+                    <a href="/penulis/edit/{{ $p->idpost }}"><button name="edit" class="btn btn-primary">Edit</button></a>
+                    <a href="/penulis/hapus/{{ $p->idpost }}"><button name="hapus" class="btn btn-danger">Hapus</button></a>
+                </div>
             </div>
+            <span class="blog-date">{{ $p->tgl_insert }}</span>
         </div>
-        <span class="blog-date">{{ $p->tgl_insert }}</span>
-    </div>
 
     @endforeach
 

@@ -34,13 +34,15 @@ Route::post('/penulis/editprofile', [EditProfilePenulisController::class, 'simpa
 Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
 Route::get('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'formTambah']);
 Route::post('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'tambahPost']);
-Route::view('/penulis/dashboard', 'penulis.dashboard_penulis');
+Route::get('/penulis/dashboard', [DashboardPenulisController::class, 'index']);
 Route::get('/penulis/hapus/{idpost}', [DaftarPostinganPenulisController::class, 'hapus']);
 Route::get('/penulis/edit/{idpost}', [DaftarPostinganPenulisController::class, 'edit']);
 Route::post('/penulis/edit/{idpost}', [SimpanEditPostinganController::class, 'simpanEdit']);
 Route::get('/logout', function () {
   auth()->logout();
+  return redirect('/');
 });
+Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
 // Route::method
 
 // Rute (url), View

@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="container" style="margin: 5%">
+<div class="container" style="margin-top: 25px;">
     <div class="card">
         <div class="card-header">Tambah postingan</div>
         <div class="card-body">
