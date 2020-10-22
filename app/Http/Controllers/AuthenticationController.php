@@ -18,7 +18,7 @@ class AuthenticationController extends Controller
 
         if (auth()->attempt($emailPassword)) {
             if (auth()->user()->penulis) {
-                return redirect()->intended('penulis');
+                return redirect()->intended('penulis/dashboard');
             }
 
             // Redirect ke halaman dashboard masing masing

@@ -1,8 +1,9 @@
-	.require {
-      color: #666;
-    }
+body {
+    background: rgb(36, 139, 139);
+    font-size: 18px;
+}
 
-    label small {
-      color: #999;
-      font-weight: normal;
-    }
+label small {
+    color: #999;
+    font-weight: normal;
+}

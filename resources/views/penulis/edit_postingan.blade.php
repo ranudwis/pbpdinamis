@@ -13,11 +13,12 @@
 		<div class="card-header">Tambah postingan</div>
 		<div class="card-body">
 			@if ($errors->any())
-			@foreach ($errors->all() as $e)
-			<div>{{ $e }}</div>
-			@endforeach
+                @foreach ($errors->all() as $e)
+                    <div>{{ $e }}</div>
+                @endforeach
 			@endif
-			<form action="" method="POST" enctype="multipart/form-data">
+            
+            <form action="" method="POST" enctype="multipart/form-data">
 				@csrf
 				<div class="form-group">
 					<label for="judul">Judul</label>
@@ -28,11 +29,11 @@
           			<label for="kategori">Kategori</label><br />
           			<select name="kategori">
           				@foreach ($kategori as $k)
-          				@if ($k->id == $post->idkategori)
-          				<option value="{{ $k->idkategori }}" selected>{{ $k->nama }}</option>
-          				@else
-          				<option value="{{ $k->idkategori }}">{{ $k->nama }}</option>
-          				@endif
+                            @if ($k->id == $post->idkategori)
+                                <option value="{{ $k->idkategori }}" selected>{{ $k->nama }}</option>
+                            @else
+                                <option value="{{ $k->idkategori }}">{{ $k->nama }}</option>
+                            @endif
           				@endforeach
           			</select>
           		</div>
