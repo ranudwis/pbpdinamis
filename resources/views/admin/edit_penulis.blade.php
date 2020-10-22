@@ -8,12 +8,15 @@
 @endsection
 
 @section('content')
-			<table class="table table-hover datapenulis">
-				@foreach ($penulis as $p)
-				<tr>
-					<td style="width: 550px">{{ $p->user->nama }}</td>
-					<td><a href="{{ url('/admin/edit_penuils/' . $p->idpenulis) }}"><i class="fas fa-key kunci"></i></a></td>
-				</tr>
-				@endforeach
-			</table>
+	<div class="card password">
+		<form method="get" action="">
+			@csrf
+			<div class="card-header">{{ auth()->user()->nama }}</div>
+			<div class="card-body">
+				<label style="margin-bottom: 10px">Password Baru</label>
+				<input type="text" class="form-control" name="password" placeholder="Password">
+				<button class="btn btn-primary editpassword" type="submit">Edit</button>
+			</div>
+		</form>
+	</div>
 @endsection

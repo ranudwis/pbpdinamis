@@ -12,14 +12,32 @@
 	<title>Dashboard Admin</title>
 </head>
 <body>
-    @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            <div>
-                {{ $error }}
+    <header>
+        <div class="judul">DASHBOARD <span>ADMIN</span></div>
+        <a href="/logout"><button class="btn btn-danger btn-logout" name="logout" value="logout">Logout</button></a>    
+    </header>
+    <div class="container dashboard">
+        <div class="row" style="height: 100%; margin-bottom: -70px">
+            <div class="col-sm menu">
+                <div class="container">
+                    <center>
+                    <h4>{{ auth()->user()->nama }}</h4>
+                    </center>
+                    @yield('menu')
+                </div>
             </div>
-        @endforeach
-    @endif
+            <div class="col-sm">  
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div>
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
 
-    @yield('content')
+                @yield('content')
+            </div>
+        </div>
+    </div>
 </body>
 </html>
