@@ -7,9 +7,14 @@ use App\Http\Controllers\DaftarPostinganPenulisController;
 use App\Http\Controllers\TambahPostinganPenulisController;
 use App\Http\Controllers\DashboardPenulisController;
 use App\Http\Controllers\SimpanEditPostinganController;
+use App\Http\Controllers\EditProfilAdminController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\EditPasswordController;
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +37,7 @@ Route::view('/penulis/dashboard', 'penulis.dashboard_penulis');
 Route::get('/penulis/hapus/{idpost}', [DaftarPostinganPenulisController::class, 'hapus']);
 Route::get('/penulis/edit/{idpost}', [DaftarPostinganPenulisController::class, 'edit']);
 Route::post('/penulis/edit/{idpost}', [SimpanEditPostinganController::class, 'simpanEdit']);
-Route::get('logout', function () {
+Route::get('/logout', function () {
   auth()->logout();
 });
 // Route::method
@@ -46,10 +51,12 @@ Route::view('daftar', 'daftar');
 Route::post('daftar', [RegistrationController::class, 'register']);
 
 //admin
-Route::view('admin/data_kategori','admin.data_kategori');
-Route::view('admin/data_penulis','admin.data_penulis');
-Route::view('admin/edit_profil','admin.edit_profil');
-Route::view('admin/dashboard_admin','admin.dashboard_admin');
-
+Route::get('/admin/editprofil', [EditProfilAdminController::class, 'tampilFormEdit']);
+Route::post('/admin/editprofil', [EditProfilAdminController::class, 'simpan']);
+Route::view('/admin/data_kategori','admin.data_kategori');
+Route::get('/admin/data_penulis', [adminController::class, 'dataPenulis']);
+Route::get('/admin/dashboard', [DashboardAdminController::class, 'tampilDashboardAdmin']);
+Route::get('/admin/edit_penulis/{idpenulis}', [EditPasswordController::class, 'editPassword']);
+Route::get('/admin/edit_penulis/{idpenulis}', [adminController::class, 'dataPenulis']);
 //homepage
 Route::get('/', [home::class, 'lihat']);
