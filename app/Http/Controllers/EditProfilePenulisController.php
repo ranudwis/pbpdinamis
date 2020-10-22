@@ -11,7 +11,7 @@ class EditProfilePenulisController extends Controller
     	$user = auth()->user();
     	$penulis = $user->penulis;
     	
-    	return view('edit_profil', compact('user', 'penulis'));
+    	return view('penulis.edit_profil', compact('user', 'penulis'));
     }
 
 	public function simpan(Request $request) {

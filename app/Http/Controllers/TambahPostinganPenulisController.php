@@ -11,7 +11,7 @@ class TambahPostinganPenulisController extends Controller
     public function formTambah() {
     	$kategori = Kategori::all();
 
-    	return view('tambah_postingan', compact('kategori'));
+    	return view('penulis.tambah_postingan', compact('kategori'));
     }
 
     public function tambahPost(Request $request) {

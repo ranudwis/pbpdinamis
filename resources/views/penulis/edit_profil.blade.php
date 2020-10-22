@@ -1,52 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-    <!-- jQuery library -->
-    <script src="jquery.min.js"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
-    <title>Mengubah profil penulis</title>
-    <style>
-        body {
-            background: #BA68C8
-        }
+@extends('partial.dashboard_penulis')
 
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #BA68C8
-        }
+@section('title', 'Mengubah Profil Penulis')
 
-        .profile-button {
-            background: #BA68C8;
-            box-shadow: none;
-            border: none
-        }
+@section('css')
+<link rel="stylesheet" type="text/css" href="edit.css">
+@endsection
 
-        .profile-button:hover {
-            background: #682773
-        }
-
-        .profile-button:focus {
-            background: #682773;
-            box-shadow: none
-        }
-
-        .profile-button:active {
-            background: #682773;
-            box-shadow: none
-        }
-
-        .back:hover {
-            color: #682773;
-            cursor: pointer
-        } 
-    </style>
-</head>
-<body>
+@section('content')
+    
     <div class="container rounded bg-white mt-5">
         <div class="row">
             <div class="col-md-4 border-right">
@@ -102,5 +63,4 @@
         </div>
     </div>
 
-</body>
-</html>
+@endsection

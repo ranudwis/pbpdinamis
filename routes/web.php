@@ -5,6 +5,8 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\EditProfilePenulisController;
 use App\Http\Controllers\DaftarPostinganPenulisController;
 use App\Http\Controllers\TambahPostinganPenulisController;
+use App\Http\Controllers\DashboardPenulisController;
+use App\Http\Controllers\SimpanEditPostinganController;
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
@@ -20,16 +22,19 @@ use App\Http\Controllers\home;
 |
 */
 
-
+//penulis
 Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
 Route::post('/penulis/editprofile', [EditProfilePenulisController::class, 'simpan']);
-
 Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
-
 Route::get('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'formTambah']);
-
 Route::post('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'tambahPost']);
-
+Route::view('/penulis/dashboard', 'penulis.dashboard_penulis');
+Route::get('/penulis/hapus/{idpost}', [DaftarPostinganPenulisController::class, 'hapus']);
+Route::get('/penulis/edit/{idpost}', [DaftarPostinganPenulisController::class, 'edit']);
+Route::post('/penulis/edit/{idpost}', [SimpanEditPostinganController::class, 'simpanEdit']);
+Route::get('logout', function () {
+  auth()->logout();
+});
 // Route::method
 
 // Rute (url), View
