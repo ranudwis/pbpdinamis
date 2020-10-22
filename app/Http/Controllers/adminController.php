@@ -11,7 +11,7 @@ class adminController extends Controller
     {
         // SELECT * FROM post
         $penulis = Penulis::all();
-
+        
         return view('admin.data_penulis', compact('penulis'));
     }
 }

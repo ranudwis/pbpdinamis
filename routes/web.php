@@ -11,6 +11,7 @@ use App\Http\Controllers\EditProfilAdminController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\EditPasswordController;
+use App\Http\Controllers\EditPenulis;
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
@@ -56,7 +57,9 @@ Route::post('/admin/editprofil', [EditProfilAdminController::class, 'simpan']);
 Route::view('/admin/data_kategori','admin.data_kategori');
 Route::get('/admin/data_penulis', [adminController::class, 'dataPenulis']);
 Route::get('/admin/dashboard', [DashboardAdminController::class, 'tampilDashboardAdmin']);
-Route::get('/admin/edit_penulis/{idpenulis}', [EditPasswordController::class, 'editPassword']);
-Route::get('/admin/edit_penulis/{idpenulis}', [adminController::class, 'dataPenulis']);
+Route::post('/admin/edit_penulis/{idpenulis}', [EditPasswordController::class, 'editPassword']);
+Route::get('/admin/edit_penulis/{idpenulis}', [EditPenulis::class, 'tampilEditPassword']);
+
+
 //homepage
 Route::get('/', [home::class, 'lihat']);

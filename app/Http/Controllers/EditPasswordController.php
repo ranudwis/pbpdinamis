@@ -9,11 +9,13 @@ use App\Models\Penulis;
 
 class EditPasswordController extends Controller
 {
-	public function editPassword ()
+	public function editPassword(Request $request, $idpenulis)
 	{
 		$penulis = Penulis::find($idpenulis);
-	    $penulis->user->password = Hash::make($request->password);
+		$user = $penulis->user;
+	    $user->password = Hash::make($request->password);
 
-		$penulis->save();
+		$user->save();
+		return redirect('/admin/data_penulis');
 	}
 }
