@@ -34,10 +34,10 @@
           <input class="search" type="text" placeholder="Search..">
         </li>
         <li>
-          <a class="btn btn-danger tombol" href="">Daftar</a>
+          <a class="btn btn-danger tombol" href="{{ url('/daftar') }}">Daftar</a>
         </li>
         <li>
-          <a class="btn btn-info tombol2" href="">Login</a>
+          <a class="btn btn-info tombol2" href="{{ url('/login') }}">Login</a>
         </li>
       </ul>
     </nav>
