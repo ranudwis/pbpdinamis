@@ -11,10 +11,10 @@
 	<div class="card password">
 		<form method="post" action="">
 			@csrf
-			<div class="card-header">{{ $penulis->user->nama }}</div>
+			<div class="card-header" style="font-weight: bold;">{{ $penulis->user->nama }}</div>
 			<div class="card-body">
 				<label style="margin-bottom: 10px">Password Baru</label>
-				<input type="text" class="form-control" name="password" placeholder="Password">
+				<input type="text" class="form-control form-pass" name="password" placeholder="Password">
 				<button class="btn btn-primary editpassword" type="submit">Edit</button>
 			</div>
 		</form>

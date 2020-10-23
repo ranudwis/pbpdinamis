@@ -8,12 +8,13 @@
 @endsection
 
 @section('content')
-			<table class="table table-hover datapenulis">
-				@foreach ($penulis as $p)
-				<tr>
-					<td style="width: 550px">{{ $p->user->nama }}</td>
-					<td><a href="{{ url('/admin/edit_penulis/' . $p->idpenulis) }}"><i class="fas fa-key kunci"></i></a></td>
-				</tr>
-				@endforeach
-			</table>
+	<h4 style="margin-top: 40px;margin-bottom: -10px;margin-left: 400px;">DAFTAR PENULIS</h4>
+	<table class="table table-hover data">
+		@foreach ($penulis as $p)
+		<tr class="tr-warna">
+			<td style="width: 550px">{{ $p->user->nama }}</td>
+			<td><a href="{{ url('/admin/edit_penulis/' . $p->idpenulis) }}"><i class="fas fa-key kunci"></i></a></td>
+		</tr>
+		@endforeach
+	</table>
 @endsection

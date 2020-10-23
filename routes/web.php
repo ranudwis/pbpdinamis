@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\EditPasswordController;
 use App\Http\Controllers\EditPenulis;
+use App\Http\Controllers\DataKategoriController;
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
@@ -54,14 +55,20 @@ Route::view('daftar', 'daftar');
 Route::post('daftar', [RegistrationController::class, 'register']);
 
 //admin
+Route::get('/admin/dashboard', [DashboardAdminController::class, 'tampilDashboardAdmin']);
+
 Route::get('/admin/editprofil', [EditProfilAdminController::class, 'tampilFormEdit']);
 Route::post('/admin/editprofil', [EditProfilAdminController::class, 'simpan']);
-Route::view('/admin/data_kategori','admin.data_kategori');
+
 Route::get('/admin/data_penulis', [adminController::class, 'dataPenulis']);
-Route::get('/admin/dashboard', [DashboardAdminController::class, 'tampilDashboardAdmin']);
 Route::post('/admin/edit_penulis/{idpenulis}', [EditPasswordController::class, 'editPassword']);
 Route::get('/admin/edit_penulis/{idpenulis}', [EditPenulis::class, 'tampilEditPassword']);
 
+Route::get('/admin/data_kategori', [DataKategoriController::class, 'dataKategori']);
+Route::post('/admin/data_kategori', [DataKategoriController::class, 'tambahKategori']);
+Route::get('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'tampilEditKategori']);
+Route::post('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'editKategori']);
+Route::get('/admin/hapus_kategori/{idkategori}', [DataKategoriController::class, 'hapusKategori']);
 
 //homepage
 Route::get('/', [home::class, 'lihat']);

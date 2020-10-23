@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Komentar extends Model
 {
     use HasFactory;
 
-    protected $table = 'post';
+    protected $table = 'komentar';
 
-    protected $primaryKey = 'idpost';
+    protected $primaryKey = 'idkomentar';
 
     public $timestamps = false;
 
@@ -20,13 +20,8 @@ class Post extends Model
         return $this->belongsTo(Penulis::class, 'idpenulis', 'idpenulis');
     }
 
-    public function kategori()
+    public function post()
     {
-    	return $this->belongsTo(Kategori::class, 'idkategori', 'idkategori');
-	}
-
-    public function komentar()
-    {
-        return $this->hasMany(Komentar::class, 'idpost', 'idpost');
+        return $this->belongsTo(Post::class, 'idpost', 'idpost');
     }
 }
