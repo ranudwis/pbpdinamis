@@ -8,5 +8,29 @@
 @endsection
 
 @section('content')
-	
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Kategori
+                </th>
+                <th>
+                    Banyak postingan
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach ($kategori as $k)
+                <tr>
+                    <td>
+                        {{ $k->nama }}
+                    </td>
+                    <td>
+                        {{ $k->post_count }}
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endsection
