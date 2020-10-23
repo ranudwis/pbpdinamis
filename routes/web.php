@@ -68,6 +68,8 @@ Route::get('/admin/data_kategori', [DataKategoriController::class, 'dataKategori
 Route::post('/admin/data_kategori', [DataKategoriController::class, 'tambahKategori']);
 Route::get('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'tampilEditKategori']);
 Route::post('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'editKategori']);
+Route::get('/admin/hapus_kategori/{idkategori}', [DataKategoriController::class, 'hapusKategori']);
+
 //homepage
 Route::get('/', [home::class, 'lihat']);
 

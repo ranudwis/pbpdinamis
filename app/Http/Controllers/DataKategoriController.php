@@ -42,4 +42,13 @@ class DataKategoriController extends Controller
 		$kategori->save();
 		return redirect('/admin/data_kategori');
 	}
+
+	public function hapusKategori($idkategori) {
+    	$kategori = Kategori::find($idkategori);
+    	if ($kategori) {
+    		$kategori->delete();
+    	}
+
+    	return redirect('/admin/data_kategori');
+    }
 }

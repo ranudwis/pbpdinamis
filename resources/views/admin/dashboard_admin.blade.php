@@ -8,14 +8,5 @@
 @endsection
 
 @section('content')
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Kategori
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-				    <button class="dropdown-item" type="button">Kategori 1</button>
-				    <button class="dropdown-item" type="button">Kategori 2</button>
-				    <button class="dropdown-item" type="button">Kategori 3</button>
-				  </div>
-				</div>
+	
 @endsection

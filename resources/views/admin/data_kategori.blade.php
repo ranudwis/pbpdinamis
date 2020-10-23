@@ -27,7 +27,7 @@
 		<tr class="tr-warna">
 			<td style="width: 550px">{{ $k->nama }}</td>
 			<td><a href="{{ url('/admin/edit_kategori/' . $k->idkategori) }}"><i class="fas fa-pencil-alt"></i></a></td>
-			<td><a href=""><i class="fas fa-trash-alt"></i></a></td>
+			<td><a href="{{ url('/admin/hapus_kategori/' . $k->idkategori) }}"><i class="fas fa-trash-alt"></i></a></td>
 		</tr>
 		@endforeach
 	</table>
