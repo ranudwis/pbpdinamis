@@ -47,16 +47,17 @@
       <h1>POSTINGAN</h1>
       <div class="rectangle"></div>
 
+      <div class="row post">
       @foreach ($post as $p)
-          <div class="row post">
             <div class="col-sm-4">
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">{{ $p->judul }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{ $p->penulis->user->nama }}</h6>
-                  <p class="card-text">{{ $p->isipost }}</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                  <p class="card-text">
+                    {{ $p->isipost }}
+                  </p>
+                  <a href="#" class="card-link">Selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -118,13 +119,6 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi doloribus dolore iure molestias vel, facere quia nobis explicabo similique, quos commodi, culpa non asperiores reprehenderit earum deserunt. Dolore, dignissimos! Accusamus!</p>
           </div>
         </div>
-
-        <!-- <div class="center box">
-          <h2>Address</h2>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi doloribus dolore iure molestias vel, facere quia nobis explicabo similique, quos commodi, culpa non asperiores reprehenderit earum deserunt. Dolore, dignissimos! Accusamus!</p>
-          </div>
-        </div> -->
 
         <div class="right box">
           <h2>Hubungi kami</h2>

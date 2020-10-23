@@ -15,7 +15,7 @@ use App\Http\Controllers\EditPenulis;
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
-
+use App\Http\Controllers\detailpostcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +65,6 @@ Route::get('/admin/edit_penulis/{idpenulis}', [EditPenulis::class, 'tampilEditPa
 
 //homepage
 Route::get('/', [home::class, 'lihat']);
+
+//detailpost
+Route::get('/detailpost', [detailpostcontroller::class, 'lihatdetailpost']);
