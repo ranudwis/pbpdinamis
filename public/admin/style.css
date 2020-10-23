@@ -93,9 +93,7 @@ header .judul{
 .form-control{
 	margin-bottom: 10px;
 	margin-left: 20px;
-	border-top: none;
-	border-left: none;
-	border-right: none;
+	border-radius: 2px;
 }
 
 .btn-edit{
@@ -139,10 +137,6 @@ header .judul{
 .btn-kategori{
 	margin-top: 10px;
 	border-radius: 2px;
-}
-.tr-warna:nth-child(odd)
-{
-    background-color: #FFF9C4;
 }
 .table-hover tr:hover td
 { 	

@@ -15,7 +15,7 @@
 				<td>
 					<input type="text" class="form-control" name="nama" placeholder="Nama Kategori">
 				</td>
-				<td style="padding-left:50px;">
+				<td style="padding-left:50px;padding-bottom: 10px">
 					<button class="btn btn-primary" type="submit" style="border-radius: 2px;"><i class="fas fa-plus"></i> Tambah</button>
 				</td>
 			</tr>
