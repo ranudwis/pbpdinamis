@@ -25,7 +25,7 @@
 	    		<tr>
 	    			<td><i class="fas fa-key"></i></td>
 	    			<td>
-	    				<input type="text" class="form-control" name="password" placeholder="Password">
+	    				<input type="password" class="form-control" name="password" placeholder="Password">
 	    			</td>
 	    		</tr>
 	    	</table>
