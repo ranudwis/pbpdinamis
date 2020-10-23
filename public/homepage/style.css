@@ -37,6 +37,12 @@ body {
     color: rgb(255, 255, 255);
 }
 
+.tombol4 {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .search {
     border-radius: 30px;
     height: 40px;
@@ -120,12 +126,12 @@ footer {
 
 .detailpost {
     margin: 50px;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
 .komentar {
-    margin-top: 0;
-    margin-bottom: 50px;
+    margin-top: 30px;
     padding: 0;
 }
 

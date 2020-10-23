@@ -17,6 +17,7 @@ use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
 use App\Http\Controllers\detailpostcontroller;
+use App\Http\Controllers\TambahKomentarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,4 @@ Route::get('/', [home::class, 'lihat']);
 //detailpost
 // Route::get('/detailpost', [detailpostcontroller::class, 'lihatdetailpost']);
 Route::get('/detailpost/{idpost}', [detailpostcontroller::class, 'detail']);
+Route::post('/detailpost/{idpost}', [TambahKomentarController::class, 'tambahKomentar']);
