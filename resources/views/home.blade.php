@@ -55,7 +55,7 @@
                   <h5 class="card-title">{{ $p->judul }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{ $p->penulis->user->nama }}</h6>
                   <p class="card-text">
-                    {{ $p->isipost }}
+                  {{ substr($p->isipost, 0, 80) }} ....
                   </p>
                   <a href="#" class="card-link">Selengkapnya</a>
                 </div>
