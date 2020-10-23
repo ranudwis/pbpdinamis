@@ -67,4 +67,5 @@ Route::get('/admin/edit_penulis/{idpenulis}', [EditPenulis::class, 'tampilEditPa
 Route::get('/', [home::class, 'lihat']);
 
 //detailpost
-Route::get('/detailpost', [detailpostcontroller::class, 'lihatdetailpost']);
+// Route::get('/detailpost', [detailpostcontroller::class, 'lihatdetailpost']);
+Route::get('/detailpost/{idpost}', [detailpostcontroller::class, 'detail']);

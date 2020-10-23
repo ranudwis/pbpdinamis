@@ -47,6 +47,7 @@
       <h1>POSTINGAN</h1>
       <div class="rectangle"></div>
 
+
       <div class="row post">
       @foreach ($post as $p)
             <div class="col-sm-4">
@@ -57,7 +58,7 @@
                   <p class="card-text">
                   {{ substr($p->isipost, 0, 80) }} ....
                   </p>
-                  <a href="#" class="card-link">Selengkapnya</a>
+                  <a href="/detailpost/{{ $p->idpost }}" class="card-link">Selengkapnya</a>
                 </div>
               </div>
             </div>

@@ -42,36 +42,56 @@
       </ul>
     </nav>
 
-    <h1 style="text-align: center; margin-top: 20px;">DETAIL POST</h1>
+    <h1 style="text-align: center; margin-top: 20px;">----------------------------- DETAIL POST -----------------------------</h1>
 
-        <div class="row container-fluid">
-            <div class="col-sm-12" style="margin-top: 20px">
-                <div class="card post">
-                    <div class="card-body">
-                        <div class="row container-fluid">
-                        <div class="col-sm-3">
-                            <img src="gb/film/shazam3.jpg" class="rounded" style="width:300px">
-                        </div>
-                        <div class="col-sm-9">
-                        <h3>Shazam</h3>
-                        <p class="card-text" style="text-align: justify;">Masih bocah, Billy Batson hanyalah seorang remaja biasa yang punya kehidupan ngenes. Ia sering berpindah-pindah karena kerap mendapatkan masalah. Namun, jauh di lubuk hatinya, Billy adalah anak baik.
-
-                            Ia kerap membantu anak-anak di seusianya yang sering mendapatkan perlakukan persekusi. Salah satunya adalah Freddy Freeman (Jack Dylan Grazer) sahabat barunya. Namun, di satu tempat, Billy kemudian bertemu dengan hal-hal yang terkait dengan sihir.
-                            
-                            Seorang kakek tua memaksa Billy menyebutkan nama Shazam. Tak percaya, Billy akhirnya justru mendapati dirinya sendiri sebagai soerang yang memiliki kekuatan besar. Usianya tidak terlihat seperti bocah 14 tahun. Kecerdasannya meningkat, bak seorang ilmuwan.
-                            
-                            Ia bisa berganti menjadi seorang superhero dengan enam kemampuan luar biasa dari dewa-dewa hanya dengan meneriakkan Shazam!
-                            
-                            Enam kekuatan yang membuatnya kini tak hanya menjadi bocha biasa, namun punya tanggung jawab lebih. Tapi, tetap saja, jiwanya adalah jiwa anak-anak yang polos, dan apa adanya.
-                            
-                            Bagaimana Billy melewati masa-masa dari identitas barunya? Apakah ia bertemu dengan lawan yang kuat atau superhero lain? Jawabannya hanya ada pada film Shazam! yang siap tayang di bioskop pada tanggal 3 April di bioskop Indonesia.
-                        </p>		  
-                        </div>
-                    </div>
-                </div>
+    <div class="card post detailpost">
+        <div class="card-body">
+            <div class="row container-fluid">
+              <div class="col-sm-4">
+                  <img src="gb/film/shazam3.jpg" class="rounded" style="width:300px">
+              </div>
+              <div class="col-sm-8">
+                <h1>{{ $post->judul }}</h1>
+                <h3> Penulis : {{ $post->penulis->user->nama }}</h3>
+                <p class="card-text deskripsi" style="text-align: justify;">{{ $post->isipost }}</p>	
+              </div>
             </div>
         </div>
+    </div>
 
+    <div class = "row container-fluid komentar">
+      <div class = "col-sm-6">
+        <div class="card post detailpost">
+            <div class="card-body">
+              <h3>Komentar</h3>
+              <form method="POST" autocomplete="on" action="" style="margin-top: 10px">
+                <div class="form-group">
+                  <label for="nama" style="margin-top: 20px">Nama</label>
+                  <input type="text" class="form-control" id="nama" maxlength="50" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Komentar</label>
+                    <textarea class="form-control" id="comment" rows="3" minlength="10" required=required></textarea>
+                </div>
+                <button type="submit" class="btn tombol3">KIRIM</button>	
+              </form>	
+            </div>
+        </div>
+      </div>
+      <div class = "col-sm-6">
+        <div class="card post detailpost">
+            <div class="card-body">
+              <h3>Kolom Komentar</h3>
+              @foreach ($post->komentar as $komen)
+                <div class="container komen">
+                  <h5>{{$komen->penulis->user->nama}}</h5>
+                  <p>{{$komen->isi}}</p>
+                </div>
+              @endforeach
+            </div>
+        </div>
+      </div>
+    </div>
 
 
     <footer>
