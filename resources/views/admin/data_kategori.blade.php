@@ -8,10 +8,27 @@
 @endsection
 
 @section('content')
-	<table class="data-kategori">
-		<tr>
-			<td>Kategori 1</td>
+	<form method="post" action="/admin/data_kategori">
+		@csrf
+		<table style="margin-top: 20px">
+			<tr>
+				<td>
+					<input type="text" class="form-control" name="nama" placeholder="Nama Kategori">
+				</td>
+				<td style="padding-left:50px;">
+					<button class="btn btn-primary" type="submit" style="border-radius: 2px;"><i class="fas fa-plus"></i> Tambah</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<h4 style="margin-left: 400px;margin-top:40px">DAFTAR KATEGORI</h4>
+	<table class="table table-hover table-kategori">
+		@foreach ($kategori as $k)
+		<tr class="tr-warna">
+			<td style="width: 550px">{{ $k->nama }}</td>
+			<td><a href="{{ url('/admin/edit_kategori/' . $k->idkategori) }}"><i class="fas fa-pencil-alt"></i></a></td>
 			<td><a href=""><i class="fas fa-trash-alt"></i></a></td>
 		</tr>
+		@endforeach
 	</table>
 @endsection
