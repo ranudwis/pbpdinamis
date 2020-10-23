@@ -16,7 +16,7 @@ use App\Http\Controllers\DataKategoriController;
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
-
+use App\Http\Controllers\detailpostcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +70,6 @@ Route::get('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 
 Route::post('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'editKategori']);
 //homepage
 Route::get('/', [home::class, 'lihat']);
+
+//detailpost
+Route::get('/detailpost', [detailpostcontroller::class, 'lihatdetailpost']);
