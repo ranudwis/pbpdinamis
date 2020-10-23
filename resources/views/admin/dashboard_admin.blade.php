@@ -8,13 +8,14 @@
 @endsection
 
 @section('content')
-    <table class="table">
+    <h4 style="margin-top: 50px;margin-left: 335px;">REKAP JUMLAH POSTINGAN</h4>
+    <table class="table table-dashboard">
         <thead>
             <tr>
                 <th>
                     Kategori
                 </th>
-                <th>
+                <th style="width: 60%">
                     Banyak postingan
                 </th>
             </tr>
