@@ -8,17 +8,17 @@
     <script src="bs/popper.min.js"></script>
     <script src="bs/js/bootstrap.min.js"></script>
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('penulis/style.css') }}">
     <title>@yield('title')</title>
     @yield('css')
 </head>
 <body>
     <header>
-        <div class="judul">DASHBOARD <span>PENULIS</span></div>
+        <a href="/penulis/dashboard"><div class="judul">DASHBOARD <span>PENULIS</span></div></a>
         <a href="/logout"><button class="btn btn-danger btn-logout" name="logout" value="logout">Logout</button></a>
     </header>
 
-    <div class="container-fluid dashboard">
+    <div class="container dashboard">
         <div class="row" style="height: 100%; margin-bottom: -70px">
             <div class="col-sm menu">
                 <div class="container">

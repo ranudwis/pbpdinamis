@@ -3,30 +3,30 @@
 @section('title', 'Dashboard')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="dashboard.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 @endsection
 
 @section('content')
 
     <section class="counter">
-        <div class="container">
+        <div class="container" style="margin-left: 15%">
             <h1 style="text-align: center;">Hello, {{ auth()->user()->nama }}</h1>    
             <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="count-card">
                         <i class="fas fa-book-reader"></i>
                         <span data-toggle="counter-up">{{ $totalTampilan }}</span>
                         <h3>Jumlah View Postingan</h3>
-                        <p>The objective of this guideline is to provide best practice guidance to improve the ability</p>
+                        <p>jumlah penonton postingan Anda</p>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="count-card">
                         <i class="fas fa-user-plus"></i>
                         <span data-toggle="counter-up">{{ $totalPost }}</span>
                         <h3>Jumlah postingan</h3>
-                        <p>The objective of this guideline is to provide best practice guidance to improve the ability</p>
+                        <p>jumlah postingan yang telah Anda publikasikan</p>
                     </div>
                 </div>
             </div>

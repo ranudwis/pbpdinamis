@@ -3,12 +3,12 @@
 @section('title', 'Mengubah Profil Penulis')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="edit.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 @endsection
 
 @section('content')
-    
-    <div class="container rounded bg-white mt-5">
+  
+    <div class="container rounded mt-5" style="margin: 14%;">
         <div class="row">
             <div class="col-md-4 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5" style="margin-top: 30%;">
