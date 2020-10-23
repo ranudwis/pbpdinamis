@@ -3,12 +3,12 @@
 @section('title', 'Daftar Postingan')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="daftar.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 @endsection
 
 @section('content')
 
-  <div class="container">
+  <div class="container" style="margin-left: 8%;">
     <div class="row">
         @foreach ($post as $p)
         <div class="col-md-4">

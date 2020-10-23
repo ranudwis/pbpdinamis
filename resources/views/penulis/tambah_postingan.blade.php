@@ -3,13 +3,13 @@
 @section('title', 'Tambah Postingan')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="tambah.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 @endsection
 
 @section('content')
 
-<div class="container" style="margin-top: 25px;">
-    <div class="card">
+<div class="container" style="margin: 3%; padding-left: 17%;">
+    <div class="card" style=" background: #F9A825">
         <div class="card-header">Tambah postingan</div>
         <div class="card-body">
             @if ($errors->any())

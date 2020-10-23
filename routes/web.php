@@ -31,20 +31,22 @@ use App\Http\Controllers\TambahKomentarController;
 */
 
 //penulis
-Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
-Route::post('/penulis/editprofile', [EditProfilePenulisController::class, 'simpan']);
-Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
-Route::get('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'formTambah']);
-Route::post('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'tambahPost']);
-Route::get('/penulis/dashboard', [DashboardPenulisController::class, 'index']);
-Route::get('/penulis/hapus/{idpost}', [DaftarPostinganPenulisController::class, 'hapus']);
-Route::get('/penulis/edit/{idpost}', [DaftarPostinganPenulisController::class, 'edit']);
-Route::post('/penulis/edit/{idpost}', [SimpanEditPostinganController::class, 'simpanEdit']);
-Route::get('/logout', function () {
-  auth()->logout();
-  return redirect('/');
+Route::middleware('penulis')->group(function () {
+    Route::get('/penulis/editprofile', [EditProfilePenulisController::class, 'tampilFormEdit']);
+    Route::post('/penulis/editprofile', [EditProfilePenulisController::class, 'simpan']);
+    Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
+    Route::get('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'formTambah']);
+    Route::post('/penulis/tambahpost', [TambahPostinganPenulisController::class, 'tambahPost']);
+    Route::get('/penulis/dashboard', [DashboardPenulisController::class, 'index']);
+    Route::get('/penulis/hapus/{idpost}', [DaftarPostinganPenulisController::class, 'hapus']);
+    Route::get('/penulis/edit/{idpost}', [DaftarPostinganPenulisController::class, 'edit']);
+    Route::post('/penulis/edit/{idpost}', [SimpanEditPostinganController::class, 'simpanEdit']);
+    Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
 });
-Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
+Route::get('/logout', function () {
+    auth()->logout();
+    return redirect('/');
+});
 // Route::method
 
 // Rute (url), View
@@ -56,20 +58,22 @@ Route::view('daftar', 'daftar');
 Route::post('daftar', [RegistrationController::class, 'register']);
 
 //admin
-Route::get('/admin/dashboard', [DashboardAdminController::class, 'tampilDashboardAdmin']);
+Route::middleware('admin')->group(function () {
+    Route::get('/admin/dashboard', [DashboardAdminController::class, 'tampilDashboardAdmin']);
 
-Route::get('/admin/editprofil', [EditProfilAdminController::class, 'tampilFormEdit']);
-Route::post('/admin/editprofil', [EditProfilAdminController::class, 'simpan']);
+    Route::get('/admin/editprofil', [EditProfilAdminController::class, 'tampilFormEdit']);
+    Route::post('/admin/editprofil', [EditProfilAdminController::class, 'simpan']);
 
-Route::get('/admin/data_penulis', [adminController::class, 'dataPenulis']);
-Route::post('/admin/edit_penulis/{idpenulis}', [EditPasswordController::class, 'editPassword']);
-Route::get('/admin/edit_penulis/{idpenulis}', [EditPenulis::class, 'tampilEditPassword']);
+    Route::get('/admin/data_penulis', [adminController::class, 'dataPenulis']);
+    Route::post('/admin/edit_penulis/{idpenulis}', [EditPasswordController::class, 'editPassword']);
+    Route::get('/admin/edit_penulis/{idpenulis}', [EditPenulis::class, 'tampilEditPassword']);
 
-Route::get('/admin/data_kategori', [DataKategoriController::class, 'dataKategori']);
-Route::post('/admin/data_kategori', [DataKategoriController::class, 'tambahKategori']);
-Route::get('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'tampilEditKategori']);
-Route::post('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'editKategori']);
-Route::get('/admin/hapus_kategori/{idkategori}', [DataKategoriController::class, 'hapusKategori']);
+    Route::get('/admin/data_kategori', [DataKategoriController::class, 'dataKategori']);
+    Route::post('/admin/data_kategori', [DataKategoriController::class, 'tambahKategori']);
+    Route::get('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'tampilEditKategori']);
+    Route::post('/admin/edit_kategori/{idkategori}', [DataKategoriController::class, 'editKategori']);
+    Route::get('/admin/hapus_kategori/{idkategori}', [DataKategoriController::class, 'hapusKategori']);
+});
 
 //homepage
 Route::get('/', [home::class, 'lihat']);

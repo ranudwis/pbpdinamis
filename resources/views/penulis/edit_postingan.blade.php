@@ -3,14 +3,14 @@
 @section('title', 'Tambah Postingan')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="tambah.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 @endsection
 
 @section('content')
 
-<div class="container" style="margin: 5%">
-	<div class="card">
-		<div class="card-header">Tambah postingan</div>
+<div class="container" style="margin: 3%; padding-left: 17%;">
+	<div class="card" style="background: #F9A825">
+		<div class="card-header">Edit postingan</div>
 		<div class="card-body">
 			@if ($errors->any())
                 @foreach ($errors->all() as $e)
@@ -29,7 +29,7 @@
           			<label for="kategori">Kategori</label><br />
           			<select name="kategori">
           				@foreach ($kategori as $k)
-                            @if ($k->id == $post->idkategori)
+                            @if ($k->idkategori == $post->idkategori)
                                 <option value="{{ $k->idkategori }}" selected>{{ $k->nama }}</option>
                             @else
                                 <option value="{{ $k->idkategori }}">{{ $k->nama }}</option>
@@ -49,7 +49,7 @@
 
           		<div class="form-group">
           			<button type="submit" class="btn btn-primary">
-          				Create
+          				Edit
           			</button>
           			<button class="btn btn-danger">
           				Cancel
