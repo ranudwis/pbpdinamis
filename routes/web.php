@@ -40,11 +40,11 @@ Route::middleware('penulis')->group(function () {
     Route::get('/penulis/hapus/{idpost}', [DaftarPostinganPenulisController::class, 'hapus']);
     Route::get('/penulis/edit/{idpost}', [DaftarPostinganPenulisController::class, 'edit']);
     Route::post('/penulis/edit/{idpost}', [SimpanEditPostinganController::class, 'simpanEdit']);
-    Route::get('/logout', function () {
-        auth()->logout();
-        return redirect('/');
-    });
     Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
+});
+Route::get('/logout', function () {
+    auth()->logout();
+    return redirect('/');
 });
 // Route::method
 
