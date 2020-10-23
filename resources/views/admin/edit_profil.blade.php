@@ -1,7 +1,7 @@
 @extends('partial.admin')
 
 @section('menu')
-	<a href="{{ url('/admin/dashboard') }}"><i class="fas fa-desktop"></i>Postingan Penulis</a>
+	<a href="{{ url('/admin/dashboard') }}"><i class="fas fa-desktop"></i>Dashboard</a>
 	<a href="{{ url('/admin/data_kategori') }}"><i class="fas fa-book"></i>Data Kategori</a>
 	<a href="{{ url('/admin/data_penulis') }}"><i class="fas fa-pencil-alt"></i>Data Penulis</a>
 	<a href="{{ url('/admin/editprofil') }}" class="active"><i class="fas fa-user-edit"></i>Edit Profil</a>
