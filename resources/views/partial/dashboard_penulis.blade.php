@@ -15,7 +15,8 @@
 <body>
     <header>
         <a href="/penulis/dashboard"><div class="judul">DASHBOARD <span>PENULIS</span></div></a>
-        <a href="/logout"><button class="btn btn-danger btn-logout" name="logout" value="logout">Logout</button></a>
+        <a href="{{ url('/') }}" class="btn btn-primary btn-home">Home</a>
+        <a href="/logout" class="btn btn-danger btn-logout">Logout</a>  
     </header>
 
     <div class="container dashboard">

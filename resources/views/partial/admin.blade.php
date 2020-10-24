@@ -14,7 +14,8 @@
 <body>
     <header>
         <div class="judul">DASHBOARD <span>ADMIN</span></div>
-        <a href="/logout"><button class="btn btn-danger btn-logout" name="logout" value="logout">Logout</button></a>    
+        <a href="{{ url('/') }}" class="btn btn-primary btn-home">Home</a>
+        <a href="/logout" class="btn btn-danger btn-logout">Logout</a>    
     </header>
     <div class="container dashboard">
         <div class="row" style="height: 100%; margin-bottom: -70px">
