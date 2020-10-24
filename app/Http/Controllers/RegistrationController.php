@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegistrationController extends Controller
 {
@@ -18,7 +19,12 @@ class RegistrationController extends Controller
             'no_telp' => 'required',
         ]);
 
-        $user = User::create($request->only('nama', 'email', 'password'));
+        $user = new User();
+        $user->nama = $request->nama;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
         $user->penulis()->create($request->only('alamat', 'kota', 'no_telp'));
 
         auth()->login($user);
