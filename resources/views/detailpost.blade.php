@@ -3,6 +3,9 @@
 @section('title', 'Detail_Post')
 
 @section('content')
+    
+    <div class="jumbotron"></div>
+    
     <a class="btn btn-lg btn-info tombol4" href="{{ url('/') }}">Kembali ke Halaman Utama</a>
 
     <div class="card post detailpost">

@@ -81,6 +81,9 @@ Route::middleware('admin')->group(function () {
 Route::get('/', [home::class, 'lihat']);
 Route::get('/kategori/{idkategori}', [home::class, 'sortKategori']);
 
+//Pencarian
+Route::get('/cari', [home::class, 'searching']);
+
 //detailpost
 // Route::get('/detailpost', [detailpostcontroller::class, 'lihatdetailpost']);
 Route::get('/detailpost/{idpost}', [detailpostcontroller::class, 'detail']);

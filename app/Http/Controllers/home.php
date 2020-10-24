@@ -25,4 +25,11 @@ class home extends Controller
         
         return view('home', compact('post','kategori','kategoriDipilih'));
     }
+
+    public function searching(Request $request)
+    {
+        $post = Post::where('judul', 'like', '%' . $request->pencarian . '%')->get();
+
+        return view('Pencarian', compact('post'));
+    }
 }

@@ -4,6 +4,8 @@
 
 @section('content')
 
+    <div class="jumbotron"></div>
+
     <div class="container postingan">
 
       <h1>POSTINGAN</h1>

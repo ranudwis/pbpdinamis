@@ -16,7 +16,10 @@
       <div id=judul>
         <a href="#">DUNIA PENUH CERITA</a>
       </div>
-        <input class="search" type="text" placeholder="Search..">
+      <form action="/cari" method="get" >
+        <input name="pencarian" class="search" type="text" placeholder="Search..">
+      </form>
+        
         <ul>
         @auth
           @if (auth()->user()->penulis)
@@ -48,7 +51,7 @@
         </ul>
     </nav>
 
-    <div class="jumbotron"></div>
+    
     
 
     @yield('content')

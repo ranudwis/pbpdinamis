@@ -105,6 +105,16 @@ nav #judul {
     font-size: 20px;
 }
 
+.pencarian {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.pencarian .hasil {
+    padding: 20px;
+    background-color: white;
+}
+
 .review {
     margin-top: 30px;
     margin-left: 100px;
