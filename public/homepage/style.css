@@ -22,12 +22,12 @@ body {
 }
 
 .tombol {
-    margin-left: 250px;
+    padding: 10px;
     font-size: 20px;
 }
 
 .tombol2 {
-    margin-left: 20px;
+    padding: 10px;
     font-size: 20px;
 }
 
@@ -51,18 +51,32 @@ body {
 
 .search {
     border-radius: 30px;
+    margin-left: 30px;
     height: 40px;
-    width: 550px;
-    margin-left: 400px;
+    width: 450px;
     text-align: center;
 }
 
-.navbar {
+nav {
+    margin: 0;
     background-color: rgb(255, 234, 163);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 20px;
-    font-weight: bold;
+    height: 70px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin-right: 30px;
+}
+
+nav #judul {
+    color: darkcyan;
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .post {
@@ -100,6 +114,10 @@ footer {
     bottom: 0px;
     width: 100%;
     background-color: rgb(255, 234, 163);
+}
+
+#anggota {
+    font-size: 15pt;
 }
 
 .main-content {

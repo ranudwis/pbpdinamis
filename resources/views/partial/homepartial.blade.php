@@ -12,36 +12,23 @@
     <title>@yield('title')</title>
   </head>
   <body>
-    <div class="jumbotron">
-    </div>
-
-    <!-- Nav Bar -->
-    <nav
-      class="navbar navbar-light navbar-expand-sm fixed-top"
-    >
-      <!-- Links -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">HOME</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">KATEGORI</a>
-          <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Kategori 1</a>
-              <a class="dropdown-item" href="#">Kategori 2</a>
-          </div>
-        </li>
-        <li>
-          <input class="search" type="text" placeholder="Search..">
-        </li>
-        <li>
+    <nav class="navbar fixed-top">
+      <div id=judul>
+        <a href="#">DUNIA PENUH CERITA</a>
+      </div>
+        <input class="search" type="text" placeholder="Search..">
+        <ul>
+          <li>
           <a class="btn btn-danger tombol" href="{{ url('/daftar') }}">Daftar</a>
-        </li>
-        <li>
+          </li>
+          <li>
           <a class="btn btn-info tombol2" href="{{ url('/login') }}">Login</a>
-        </li>
-      </ul>
+          </li>
+        </ul>
     </nav>
+
+    <div class="jumbotron"></div>
+    
 
     @yield('content')
 
@@ -55,21 +42,42 @@
         </div>
 
         <div class="right box">
-          <h2>Hubungi kami</h2>
+          <h2>ANGGOTA TIM</h2>
           <div class="content">
-            <form action="#">
-              <div class="email">
-                <div class="text">Email</div>
-                <input type="email" required>
-              </div>
-              <div class="msg">
-                <div class="text">Pesan</div>
-                <textarea name="pesan" id="pesan" cols="25" rows="2"></textarea>
-              </div>
-              <div class="btn">
-                <button>Kirim</button>
-              </div>
-            </form>
+            <table id="anggota">
+              <tr>
+                <td>
+                  Setiyoningsih
+                </td>
+                <td>
+                  (24060118120033)
+                </td>
+              </tr>
+              <tr>
+                <td>
+                Latifah Arum Sari
+                </td>
+                <td>
+                (24060118130080)
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Dandi Arimansyah
+                </td>
+                <td>
+                  (24060118130093)
+                </td>
+              </tr>
+              <tr>
+                <td>
+                Ranu Dwi Setiadi
+                </td>
+                <td>
+                (24060118120095)
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>

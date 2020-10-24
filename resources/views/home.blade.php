@@ -14,7 +14,7 @@
       @foreach ($post as $p)
             <div class="col-sm-4">
               <div class="card" style="width: 18rem;">
-                <img src="{{ Storage::url($p->file_gambar) }}" alt="gambar {{ $p->judul }}">
+                <img src="" alt="gambar {{ $p->judul }}">
                 <div class="card-body">
                   <h5 class="card-title">{{ $p->judul }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{ $p->penulis->user->nama }}</h6>
@@ -31,7 +31,7 @@
 
     <div class="container postingan">
 
-      <h1>REVIEW PENULIS</h1>
+      <h1>MOTIVATIONAL QUOTES</h1>
       <div class="rectangle"></div>
 
       <div id="carouselExampleIndicators" class="carousel slide review" data-ride="carousel">
