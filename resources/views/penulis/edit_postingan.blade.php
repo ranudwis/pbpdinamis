@@ -1,11 +1,5 @@
 @extends('partial.dashboard_penulis')
 
-@section('title', 'Tambah Postingan')
-
-@section('css')
-<link rel="stylesheet" type="text/css" href="style.css">
-@endsection
-
 @section('content')
 
 <div class="container" style="margin: 3%; padding-left: 17%;">

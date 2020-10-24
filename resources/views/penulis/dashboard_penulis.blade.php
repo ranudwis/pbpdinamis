@@ -1,9 +1,10 @@
 @extends('partial.dashboard_penulis')
 
-@section('title', 'Dashboard')
-
-@section('css')
-<link rel="stylesheet" type="text/css" href="style.css">
+@section('menu')
+<a href="{{ url('/penulis/dashboard') }}" class="active"><i class="fas fa-desktop"></i>Dashboard</a>
+<a href="{{ url('/penulis/editprofile') }}"><i class="fas fa-pencil-alt"></i>Edit Profil</a>
+<a href="{{ url('/penulis/post') }}"><i class="fas fa-desktop"></i>Daftar Postingan</a>
+ <a href="{{ url('/penulis/tambahpost') }}"><i class="fas fa-book"></i>Tambah Postingan</a>
 @endsection
 
 @section('content')

@@ -9,12 +9,12 @@
     <script src="bs/js/bootstrap.min.js"></script>
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('penulis/style.css') }}">
-    <title>@yield('title')</title>
-    @yield('css')
+    <title>Dashboard Penulis</title>
+   
 </head>
 <body>
     <header>
-        <a href="/penulis/dashboard"><div class="judul">DASHBOARD <span>PENULIS</span></div></a>
+        <div class="judul">DASHBOARD <span>PENULIS</span></div>
         <a href="{{ url('/') }}" class="btn btn-primary btn-home">Home</a>
         <a href="/logout" class="btn btn-danger btn-logout">Logout</a>  
     </header>
@@ -26,9 +26,7 @@
                     <center>
                         <h4>{{ auth()->user()->nama }}</h4>
                     </center>
-                    <a href="{{ url('/penulis/editprofile') }}"><i class="fas fa-pencil-alt"></i>Edit Profil</a>
-                    <a href="{{ url('/penulis/post') }}"><i class="fas fa-desktop"></i>Daftar Postingan</a>
-                    <a href="{{ url('/penulis/tambahpost') }}"><i class="fas fa-book"></i>Tambah Postingan</a>
+                    @yield('menu')
                 </div>
             </div>
 
