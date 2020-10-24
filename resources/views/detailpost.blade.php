@@ -22,35 +22,35 @@
     </div>
 
     <div class = "row container-fluid komentar">
-      <div class = "col-sm-6">
-        <div class="card post detailpost">
-            <div class="card-body">
-              <h3>Komentar</h3>
-              <form method="POST" autocomplete="on" action="" style="margin-top: 10px">
-              @csrf
-                <div class="form-group">
-                  <label for="nama" style="margin-top: 20px">Nama</label>
-                  <input type="text" class="form-control" value="{{ auth()->user()->nama }}" required="required" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="comment">Komentar</label>
-                    <textarea name ="isi" class="form-control" id="comment" rows="3" minlength="10" required=required></textarea>
-                </div>
-                <button type="submit" class="btn tombol3">KIRIM</button>	
-              </form>	
-            </div>
-        </div>
-      </div>
-      <div class = "col-sm-6">
-        <div class="card post detailpost">
+      <div class = "col-sm-7">
+        <div class="card post detailpost" style="margin-right:0">
             <div class="card-body">
               <h3>Kolom Komentar</h3>
               @foreach ($post->komentar as $komen)
                 <div class="container komen">
                   <h5>{{$komen->penulis->user->nama}}</h5>
+                  <h5>{{$komen->penulis->idpenulis}}</h5>
+                  <h5>{{$komen->idpenulis}}</h5>
                   <p>{{$komen->isi}}</p>
+                  @if( $komen->penulis->idpenulis == $komen->idpenulis)
+                    <button type="hapus" class="btn btn-sm tombol5">Hapus Komentar Saya</button>
+                  @endif
                 </div>
               @endforeach
+            </div>
+        </div>
+      </div>
+      <div class = "col-sm-5">
+        <div class="card post detailpost" style="margin-right:20px">
+            <div class="card-body">
+              <h3>Komentar</h3>
+              <form method="POST" autocomplete="on" action="" style="margin-top: 10px">
+              @csrf
+                <div class="form-group">
+                    <textarea name ="isi" class="form-control" id="comment" rows="3" minlength="10" required=required></textarea>
+                </div>
+                <button type="submit" class="btn tombol3">KIRIM</button>	
+              </form>	
             </div>
         </div>
       </div>
