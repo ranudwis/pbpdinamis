@@ -9,21 +9,26 @@
       <h1>POSTINGAN</h1>
       <div class="rectangle"></div>
 
-      <!-- <div class="dropdown kategori">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
+      <div class="dropdown dropright kategori">
+        <button class="btn btn-success btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @if (isset($kategoriDipilih))
+          Kategori {{ $kategoriDipilih->nama }}
+        @else
+          Semua Kategori
+        @endif
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="/">Semua Kategori</a>
+        @foreach ($kategori as $k)
+          <a class="dropdown-item" href="/kategori/{{$k -> idkategori}}">{{$k -> nama}}</a>
+        @endforeach
         </div>
-      </div> -->
+      </div>
 
       <div class="row post">
       @foreach ($post as $p)
             <div class="col-sm-4">
-              <div class="card" style="width: 18rem;">
+              <div class="card tiap">
                 <img src="" alt="gambar {{ $p->judul }}">
                 <div class="card-body">
                   <h5 class="card-title">{{ $p->judul }}</h5>

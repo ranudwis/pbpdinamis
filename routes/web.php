@@ -79,6 +79,7 @@ Route::middleware('admin')->group(function () {
 
 //homepage
 Route::get('/', [home::class, 'lihat']);
+Route::get('/kategori/{idkategori}', [home::class, 'sortKategori']);
 
 //detailpost
 // Route::get('/detailpost', [detailpostcontroller::class, 'lihatdetailpost']);
