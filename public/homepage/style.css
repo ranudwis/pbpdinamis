@@ -60,7 +60,7 @@ body {
 nav {
     margin: 0;
     background-color: rgb(255, 234, 163);
-    height: 70px;
+    height: 100px;
 }
 
 nav ul {
@@ -89,6 +89,10 @@ nav #judul {
 .postingan {
     text-align: center;
     margin-bottom: 30px;
+}
+
+.kategori {
+    margin-top: 20px;
 }
 
 .review {
@@ -171,4 +175,9 @@ footer {
 .komen p {
     border-style: solid;
     padding: 10px;
+}
+
+.peringatan {
+    color: red;
+    margin-top: 20px;
 }

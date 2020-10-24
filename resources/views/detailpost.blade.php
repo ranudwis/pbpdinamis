@@ -29,12 +29,14 @@
               @foreach ($post->komentar as $komen)
                 <div class="container komen">
                   <h5>{{$komen->penulis->user->nama}}</h5>
-                  <h5>{{$komen->penulis->idpenulis}}</h5>
-                  <h5>{{$komen->idpenulis}}</h5>
                   <p>{{$komen->isi}}</p>
-                  @if( $komen->penulis->idpenulis == $komen->idpenulis)
-                    <button type="hapus" class="btn btn-sm tombol5">Hapus Komentar Saya</button>
-                  @endif
+                  @auth
+                    @if(auth()->user()->penulis)
+                      @if( auth()->user()->penulis->idpenulis == $komen->post->idpenulis)
+                        <a href="/detailpost/hapus/{{$komen->idkomentar}}" class="btn btn-sm tombol5">Hapus Komentar</a>
+                      @endif
+                    @endif
+                  @endauth
                 </div>
               @endforeach
             </div>
@@ -44,13 +46,23 @@
         <div class="card post detailpost" style="margin-right:20px">
             <div class="card-body">
               <h3>Komentar</h3>
-              <form method="POST" autocomplete="on" action="" style="margin-top: 10px">
-              @csrf
-                <div class="form-group">
-                    <textarea name ="isi" class="form-control" id="comment" rows="3" minlength="10" required=required></textarea>
-                </div>
-                <button type="submit" class="btn tombol3">KIRIM</button>	
-              </form>	
+              @auth
+                @if (auth()->user()->penulis)
+                  <form method="POST" autocomplete="on" action="" style="margin-top: 10px">
+                  @csrf
+                    <div class="form-group">
+                        <textarea name ="isi" class="form-control" id="comment" rows="3" minlength="10" required=required></textarea>
+                    </div>
+                    <button type="submit" class="btn tombol3">KIRIM</button>	
+                  </form>
+                @else
+                  <h4 class="peringatan">*Admin tidak bisa memberikan komentar</h4>
+                @endif
+              @endauth
+
+              @guest
+                <h4 class="peringatan">*Harus Login sebagai penulis untuk Komentar</h4>
+              @endguest
             </div>
         </div>
       </div>

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('homepage/style.css') }}"> />
-    <script src="{{ asset('bootstrap/jquery.min.js') }}"></script>
-    <script src="{{ asset('bootstrap/popper.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
     <title>@yield('title')</title>
@@ -18,12 +18,33 @@
       </div>
         <input class="search" type="text" placeholder="Search..">
         <ul>
+        @auth
+          @if (auth()->user()->penulis)
           <li>
-          <a class="btn btn-danger tombol" href="{{ url('/daftar') }}">Daftar</a>
+            <a class="btn btn-info tombol2" href="{{ url('/penulis/dashboard') }}">Dasboard Penulis</a>
           </li>
           <li>
-          <a class="btn btn-info tombol2" href="{{ url('/login') }}">Login</a>
+            <a class="btn btn-danger tombol2" href="/logout">Logout</a>
           </li>
+            
+          @else
+          <li>
+            <a class="btn btn-info tombol2" href="{{ url('/admin/dashboard') }}">Dasboard Admin</a>
+          </li>
+          <li>
+            <a class="btn btn-danger tombol2" href="/logout">Logout</a>
+          </li>
+          @endif
+        @endauth
+
+        @guest
+          <li>
+            <a class="btn btn-danger tombol" href="{{ url('/daftar') }}">Daftar</a>
+          </li>
+          <li>
+            <a class="btn btn-info tombol2" href="{{ url('/login') }}">Login</a>
+          </li>
+        @endguest
         </ul>
     </nav>
 

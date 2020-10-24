@@ -18,6 +18,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\home;
 use App\Http\Controllers\detailpostcontroller;
 use App\Http\Controllers\TambahKomentarController;
+use App\Http\Controllers\HapusKomentarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::middleware('penulis')->group(function () {
     Route::get('/penulis/edit/{idpost}', [DaftarPostinganPenulisController::class, 'edit']);
     Route::post('/penulis/edit/{idpost}', [SimpanEditPostinganController::class, 'simpanEdit']);
     Route::get('/penulis/post', [DaftarPostinganPenulisController::class, 'daftarPostingan']);
+    Route::get('/detailpost/hapus/{idkomentar}', [HapusKomentarController::class, 'hapusKomentar']);
 });
 Route::get('/logout', function () {
     auth()->logout();
