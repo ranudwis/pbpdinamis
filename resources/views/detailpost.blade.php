@@ -12,10 +12,10 @@
         <div class="card-body">
             <div class="row container-fluid">
               <div class="col-sm-4">
-                  <img src="gb/film/shazam3.jpg" class="rounded" style="width:300px">
+                  <img src="{{ Storage::url($post->file_gambar) }}" class="rounded gambar_detail" style="width:300px">
               </div>
               <div class="col-sm-8">
-                <h1>{{ $post->judul }}</h1>
+                <h1 class="judul_post">{{ $post->judul }}</h1>
                 <h4> Kategori : {{$post->kategori->nama}}</h4>
                 <h4> Penulis : {{ $post->penulis->user->nama }}</h4>
                 <p class="card-text deskripsi" style="text-align: justify;">{{ $post->isipost }}</p>	
@@ -28,7 +28,7 @@
       <div class = "col-sm-7">
         <div class="card post detailpost" style="margin-right:0">
             <div class="card-body">
-              <h3>Kolom Komentar</h3>
+              <h3 class="judul_post">Kolom Komentar</h3>
               @foreach ($post->komentar as $komen)
                 <div class="container komen">
                   <h5>{{$komen->penulis->user->nama}}</h5>
@@ -48,7 +48,7 @@
       <div class = "col-sm-5">
         <div class="card post detailpost" style="margin-right:20px">
             <div class="card-body">
-              <h3>Komentar</h3>
+              <h3 class="judul_post">Komentar</h3>
               @auth
                 @if (auth()->user()->penulis)
                   <form method="POST" autocomplete="on" action="" style="margin-top: 10px">
@@ -59,12 +59,12 @@
                     <button type="submit" class="btn tombol3">KIRIM</button>	
                   </form>
                 @else
-                  <h4 class="peringatan">*Admin tidak bisa memberikan komentar</h4>
+                  <h6 class="peringatan">*Admin tidak bisa memberikan komentar</h6>
                 @endif
               @endauth
 
               @guest
-                <h4 class="peringatan">*Harus Login sebagai penulis untuk Komentar</h4>
+                <h6 class="peringatan">*Harus Login sebagai penulis untuk Komentar</h6>
               @endguest
             </div>
         </div>

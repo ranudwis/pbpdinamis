@@ -95,13 +95,29 @@ nav #judul {
 
 .postingan {
     text-align: center;
+    align-items: center;
     margin-bottom: 30px;
 }
 
 .tiap {
+    background-color: rgb(36, 139, 139);
+    border-width: 7px;
+    border-color: wheat;
+    align-items: center;
     margin-bottom: 20px;
-    width: 18rem;
-    height: 18rem;
+    width: 22rem;
+    height: 24rem;
+}
+
+.text {
+    background-color: whitesmoke;
+    bottom: 0;
+}
+
+.judul_post {
+    color: rgb(143, 133, 0);
+    text-align: left;
+    font-weight: bolder;
 }
 
 .postingan .kategori {
@@ -109,6 +125,16 @@ nav #judul {
     margin-left: 35px;
     text-align: left;
     font-size: 20px;
+}
+
+.gambar_post {
+    padding: 10px;
+    max-width: 200px;
+    max-height: 150px;
+}
+
+.gambar_detail {
+    max-width: 350px;
 }
 
 .pencarian {
