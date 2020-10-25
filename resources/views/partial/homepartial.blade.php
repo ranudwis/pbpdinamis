@@ -51,9 +51,6 @@
         </ul>
     </nav>
 
-    
-    
-
     @yield('content')
 
     <footer>
