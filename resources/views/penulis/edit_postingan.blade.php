@@ -11,7 +11,7 @@
                     <div>{{ $e }}</div>
                 @endforeach
 			@endif
-            
+
             <form action="" method="POST" enctype="multipart/form-data">
 				@csrf
 				<div class="form-group">
@@ -45,9 +45,9 @@
           			<button type="submit" class="btn btn-primary">
           				Edit
           			</button>
-          			<button class="btn btn-danger">
+          			<a href="{{ url('penulis/post') }}" class="btn btn-danger">
           				Cancel
-          			</button>
+          			</a>
           		</div>
           	</form>
         </div>
