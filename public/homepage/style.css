@@ -111,7 +111,7 @@ nav #judul {
 
 .text {
     background-color: whitesmoke;
-    bottom: 0;
+    width: 100%;
 }
 
 .judul_post {
