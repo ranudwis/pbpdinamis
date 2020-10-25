@@ -34,6 +34,7 @@
                 <img class="gambar_post" src="{{ Storage::url($p->file_gambar) }}" alt="gambar {{ $p->judul }}">
                 <div class="card-body text">
                   <h5 class="card-title judul_post">{{ $p->judul }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Kategori : {{ $p->kategori->nama }}</h6>
                   <h6 class="card-subtitle mb-2 text-muted">Penulis : {{ $p->penulis->user->nama }}</h6>
                   <p class="card-text">
                   {{ substr($p->isipost, 0, 80) }} ....
