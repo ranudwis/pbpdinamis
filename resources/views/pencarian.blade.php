@@ -25,9 +25,9 @@
       @foreach ($post as $p)
         <div class="col-sm-4">
           <div class="card tiap">
-            <img src="" alt="gambar {{ $p->judul }}">
-            <div class="card-body">
-              <h5 class="card-title">{{ $p->judul }}</h5>
+            <img class="gambar_post" src="{{ Storage::url($p->file_gambar) }}" alt="gambar {{ $p->judul }}">
+            <div class="card-body text">
+              <h5 class="card-title judul_post">{{ $p->judul }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{ $p->penulis->user->nama }}</h6>
               <p class="card-text">
               {{ substr($p->isipost, 0, 80) }} ....
