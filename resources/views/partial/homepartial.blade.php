@@ -56,9 +56,13 @@
     <footer>
       <div class="main-content">
         <div class="left box">
-          <h2>Tentang kami</h2>
+          <h2>Deskripsi Website</h2>
           <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi doloribus dolore iure molestias vel, facere quia nobis explicabo similique, quos commodi, culpa non asperiores reprehenderit earum deserunt. Dolore, dignissimos! Accusamus!</p>
+            <p>
+              "Dunia Penuh Cerita" merupakan suatu web yang berisi kumpulan 
+              cerita, mulai dari cerita anak-anak sampai cerita masalah 
+              kehidupan. 
+            </p>
           </div>
         </div>
 
