@@ -33,7 +33,9 @@ class home extends Controller
 
     public function searching(Request $request)
     {
-        $post = Post::where('judul', 'like', '%' . $request->pencarian . '%')->get();
+        $post = Post::where('judul', 'like', '%' . $request->pencarian . '%')
+            ->with('kategori')
+            ->get();
 
         return $post;
     }
