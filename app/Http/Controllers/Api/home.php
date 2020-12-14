@@ -7,12 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Kategori;
 
-
 class home extends Controller
 {
     public function lihat()
     {
-        $post = Post::with('kategori')->all();
+        $post = Post::with('kategori')->get();
 
         return $post;
     }
