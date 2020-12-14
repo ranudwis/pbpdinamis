@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\home;
+use App\Http\Controllers\Api\detailpostcontroller;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//homepage
+Route::get('/', [home::class, 'lihat']);
+Route::get('/kategori/{idkategori}', [home::class, 'sortKategori']);
+
+//Pencarian
+Route::get('/cari', [home::class, 'searching']);
+
+Route::get('/detailpost/{idpost}', [detailpostcontroller::class, 'detail']);
