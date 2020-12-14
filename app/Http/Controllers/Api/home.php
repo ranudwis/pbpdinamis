@@ -12,9 +12,7 @@ class home extends Controller
 {
     public function lihat()
     {
-        // SELECT * FROM post
-        $post = Post::all();
-        $kategori = Kategori::all();
+        $post = Post::with('kategori')->all();
 
         return $post;
     }
@@ -23,14 +21,19 @@ class home extends Controller
     {
         $kategoriDipilih = Kategori::find($idkategori);
         $post = $kategoriDipilih->post;
-        $kategori = Kategori::all();
-        
+
         return $post;
+    }
+
+    public function kategori()
+    {
+        $kategori = Kategori::all();
+
+        return $kategori;
     }
 
     public function searching(Request $request)
     {
-
         $post = Post::where('judul', 'like', '%' . $request->pencarian . '%')->get();
 
         return $post;

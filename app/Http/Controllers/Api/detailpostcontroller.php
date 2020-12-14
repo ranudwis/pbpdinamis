@@ -9,7 +9,7 @@ use App\Models\Post;
 class detailpostcontroller extends Controller
 {
     public function detail($idpost) {
-    	$post = Post::with('comment')->find($idpost);
+    	$post = Post::with('komentar')->find($idpost);
 
     	return $post;
     }

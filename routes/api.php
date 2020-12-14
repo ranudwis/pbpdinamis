@@ -19,11 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//homepage
-Route::get('/', [home::class, 'lihat']);
-Route::get('/kategori/{idkategori}', [home::class, 'sortKategori']);
+Route::get('/kategori', [home::class, 'kategori']);
 
-//Pencarian
 Route::get('/cari', [home::class, 'searching']);
 
-Route::get('/detailpost/{idpost}', [detailpostcontroller::class, 'detail']);
+Route::get('/post', [home::class, 'lihat']);
+Route::get('/post/kategori/{idkategori}', [home::class, 'sortKategori']);
+Route::get('/post/{idpost}', [detailpostcontroller::class, 'detail']);
