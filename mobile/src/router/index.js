@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
-import Kategori from '@/views/Kategori.vue'
+import Home from '@/views/Home'
+import Kategori from '@/views/Kategori'
+import PostKategori from '@/views/PostKategori'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,10 @@ const routes = [
         path: '/kategori',
         name: 'kategori',
         component: Kategori
+    }, {
+        path: '/kategori/:id',
+        name: 'postkategori',
+        component: PostKategori,
     }
 ]
 
