@@ -1,5 +1,5 @@
 <template>
     <v-container>
-        Ini halaman home
+        Ini halaman kategori
     </v-container>
 </template>
