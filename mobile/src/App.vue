@@ -18,7 +18,7 @@
             <v-btn :to="{ name: 'kategori' }" exact>
                 <span>Kategori</span>
 
-                <v-icon>mdi-heart</v-icon>
+                <v-icon>mdi-view-sequential</v-icon>
             </v-btn>
 
             <v-btn>
