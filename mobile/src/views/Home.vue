@@ -1,5 +1,5 @@
 <template>
-<v-container v-if="post">
+<v-container v-if="post" class="d-flex flex-column align-center mx-auto">
   <v-card
     v-for="p in post"
     :key="p.idpost"
@@ -9,7 +9,7 @@
   >
     <v-img
       class=" my-0"
-      src="@/assets/06o89NygsKFcyMpfaoesP0gtUOEPxvEfbHWkoK8M.jpeg"
+      src="@/assets/qodKzDHqIo451YOaIbzb64uAymeoFUAl23wUkcdd.jpeg"
       height="200px"
     ></v-img>
 
@@ -28,6 +28,7 @@
         class="mb-4 rounded-b-lg"
         color="teal darken-1"
         dark
+        :to="{ name: 'detailpost', params: {id: p.idpost} }"
       >
         DETAIL POST
       </v-btn>

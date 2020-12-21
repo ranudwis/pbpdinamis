@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home'
 import Kategori from '@/views/Kategori'
 import PostKategori from '@/views/PostKategori'
+import DetailPost from '@/views/DetailPost'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,10 @@ const routes = [
         path: '/kategori/:id',
         name: 'postkategori',
         component: PostKategori,
+    }, {
+        path: '/post/:id',
+        name: 'detailpost',
+        component: DetailPost,
     }
 ]
 
