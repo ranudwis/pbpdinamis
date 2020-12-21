@@ -2,6 +2,7 @@
     <v-container>
         <div class="text-left">
             <v-btn
+                :to="{ name: 'home' }" exact
                 class="ml-1 mb-2"
                 color="red darken-2"
                 dark
