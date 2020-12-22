@@ -11,6 +11,9 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
+        redirect: '/post'
+    }, {
+        path: '/post',
         name: 'home',
         component: Home,
         meta: {
