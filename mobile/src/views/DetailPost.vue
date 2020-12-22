@@ -1,22 +1,5 @@
 <template>
     <v-container v-if="post">
-        <div class="text-left">
-            <v-btn
-                :to="{ name: 'home' }" exact
-                class="ml-1 mb-2"
-                color="red darken-2"
-                dark
-            >
-            <v-icon
-                dark
-                left
-            >
-                mdi-arrow-left
-            </v-icon>
-            kembali
-            </v-btn>
-        </div>
-
         <v-card class="mx-1 px-2">
             <v-img
                 class="my-0"

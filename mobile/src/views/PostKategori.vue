@@ -1,19 +1,5 @@
 <template>
     <v-container>
-        <v-btn
-            :to="{ name: 'kategori' }"
-            class="ma-2"
-            color="red darken-2"
-            dark
-            >
-            <v-icon
-              dark
-              left
-                >
-              mdi-arrow-left
-            </v-icon>kembali
-        </v-btn>
-
         <loading-bar v-if="! post"></loading-bar>
 
         <div v-else-if="post.length == 0" class="text-center">

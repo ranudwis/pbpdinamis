@@ -12,11 +12,17 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: Home
+        component: Home,
+        meta: {
+            root: true
+        }
     }, {
         path: '/kategori',
         name: 'kategori',
-        component: Kategori
+        component: Kategori,
+        meta: {
+            root: true
+        }
     }, {
         path: '/kategori/:id',
         name: 'postkategori',
@@ -24,7 +30,10 @@ const routes = [
     }, {
         path: '/caripost',
         name: 'caripost',
-        component: CariPost
+        component: CariPost,
+        meta: {
+            root: true
+        }
     }, {
         path: '/post/:id',
         name: 'detailpost',

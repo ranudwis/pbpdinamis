@@ -1,11 +1,15 @@
 <template>
     <v-app>
         <v-app-bar app color="white">
-            <!-- <v-btn icon>
+            <v-btn
+                v-if="! $route.meta.root"
+                icon
+                @click="$router.back()"
+            >
                 <v-icon>
                     mdi-arrow-left
                 </v-icon>
-            </v-btn> -->
+            </v-btn>
 
             <v-toolbar-title>
                 Dunia Penuh Cerita
