@@ -8,7 +8,7 @@
             <router-view></router-view>
         </v-main>
 
-        <v-bottom-navigation app grow color="primary">
+        <v-bottom-navigation app grow color="orange">
             <v-btn :to="{ name: 'home' }" exact>
                 <span>Home</span>
 
@@ -24,7 +24,7 @@
             <v-btn :to="{ name: 'caripost' }" exact>
                 <span>Cari</span>
 
-                <v-icon>mdi-heart</v-icon>
+                <v-icon>mdi-magnify</v-icon>
             </v-btn>
         </v-bottom-navigation>
     </v-app>
