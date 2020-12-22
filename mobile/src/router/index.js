@@ -23,7 +23,11 @@ const routes = [
     }, {
         path: '/caripost',
         name: 'caripost',
-        component: CariPost
+        component: CariPost,
+    }, {
+        path: '/caripost/judul',
+        name: 'caripost',
+        component: CariPost,
     }
 ]
 

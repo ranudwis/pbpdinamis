@@ -64,8 +64,7 @@ export default {
     }),
 
     async created() {
-        let post = await api.get('post/kategori/' + this.$route.params.id)
-        
+
         let post = await api.get('post')
         this.post = post.data
 
