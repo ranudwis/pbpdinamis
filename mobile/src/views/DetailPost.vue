@@ -9,12 +9,10 @@
 
             <h1 class="text-center">{{ post.judul }}</h1>
             <h2 class="text-center">{{ post.komentar.isi }}</h2>
-            <h4 class="text-center">Penulis : Dandi</h4>
-            <!-- <h4 class="text-center">Kategori : {{ post.kategori.nama }}</h4> -->
+            <h4 class="text-center">Penulis : {{ post.penulis.user.nama }}</h4>
+            <h4 class="text-center">Kategori : {{ post.kategori.nama }}</h4>
 
             <v-divider class="mx-4 my-1"></v-divider>
-
-            <h3 class="text-center">Cerita Lengkap</h3>
 
             <p class="text-justify mx-3 mb-2">{{ post.isipost }}</p>
 
