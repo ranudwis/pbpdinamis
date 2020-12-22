@@ -3,7 +3,7 @@
         <v-btn
             :to="{ name: 'kategori' }"
             class="ma-2"
-            color="red darken-4"
+            color="red darken-2"
             dark
             >
             <v-icon
@@ -11,10 +11,9 @@
               left
                 >
               mdi-arrow-left
-            </v-icon>Back
+            </v-icon>kembali
         </v-btn>
-        
-
+    
 
 
     </v-container>

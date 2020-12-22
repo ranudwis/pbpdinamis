@@ -10,9 +10,7 @@
             <v-card-title class="pt-2 pb-1">{{ kat.nama }}</v-card-title>
             <v-divider class="mx-4"></v-divider>
             <v-card-text class="pt-1 pb-1">
-                <p  class="my-0">
-                    Jumlah Postingan: {{ kat.post_count}} 
-                </p>
+                <p  class="my-0">Jumlah Postingan: {{ kat.post_count}} </p>
             </v-card-text>
         </v-card>
     </v-container>

@@ -26,7 +26,7 @@ class home extends Controller
 
     public function kategori()
     {
-        $kategori = Kategori::all();
+        $kategori = Kategori::withCount('post')->get();
 
         return $kategori;
     }
