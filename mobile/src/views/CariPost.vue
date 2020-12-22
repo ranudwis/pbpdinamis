@@ -13,13 +13,17 @@
                     color="orange"
                 ></v-text-field>
 
-                <v-container v-if="post && !loading" class="d-flex flex-column align-center mx-auto">
+                <v-container v-if="post && post.length !=0 && !loading" class="d-flex flex-column align-center mx-auto">
                     <post-item
                         v-for="p in post"
                         :key="p.idpost"
                         :p="p"
                     ></post-item>
                 </v-container>
+
+                <div v-else-if="post && post.length == 0" class="text-h5 text-center">
+                    <h5>Hasil pencarian tidak ditemukan</h5>
+                </div>
 
                 <loading-bar v-else-if="loading"></loading-bar>
             </v-col>
