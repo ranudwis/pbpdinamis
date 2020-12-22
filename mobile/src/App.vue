@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-app-bar app color="white">
-            Tubes UAS PBP
+            Dunia Penuh Cerita
         </v-app-bar>
 
         <v-main>
