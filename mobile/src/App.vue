@@ -21,10 +21,10 @@
                 <v-icon>mdi-view-sequential</v-icon>
             </v-btn>
 
-            <v-btn>
+            <v-btn :to="{ name: 'caripost' }" exact>
                 <span>Cari</span>
 
-                <v-icon>mdi-magnify</v-icon>
+                <v-icon>mdi-heart</v-icon>
             </v-btn>
         </v-bottom-navigation>
     </v-app>
