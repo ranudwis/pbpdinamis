@@ -13,34 +13,25 @@
               mdi-arrow-left
             </v-icon>kembali
         </v-btn>
-        <v-card class="mx-1 px-2">
-                <v-img
-                class="my-0"
-                src="@/assets/qodKzDHqIo451YOaIbzb64uAymeoFUAl23wUkcdd.jpeg"
-                height="200px"
-                ></v-img>
-
-                <h1 class="text-center">{{ post.judul }}</h1>
-                <h4 class="text-center">Penulis : {{penulis.}}</h4>
-                <!-- <h4 class="text-center">Kategori : {{ post.kategori.nama }}</h4> -->
-
-                <v-divider class="mx-4 my-1"></v-divider>
-
-                <h3 class="text-center">Cerita Lengkap</h3>
-
-                <p class="text-justify mx-3 mb-2">{{ post.isipost }}</p>
-        </v-card>
+        <post-item
+            v-for="p in post"
+            :key="p.idpost"
+            :p="p"
+        ></post-item>
     </v-container>
 </template>
 
 <script>
 import api from '@/api'
+import PostItem from '@/components/PostItem'
 
 export default {
     data: () => ({
         post: null
     }),
-
+    components: {
+        PostItem
+    },
     async created() {
         let post = await api.get('post/kategori/' + this.$route.params.id)
 
