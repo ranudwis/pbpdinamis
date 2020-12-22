@@ -25,6 +25,7 @@
             ></v-img>
 
             <h1 class="text-center">{{ post.judul }}</h1>
+            <h2 class="text-center">{{ post.komentar.isi }}</h2>
             <h4 class="text-center">Penulis : Dandi</h4>
             <!-- <h4 class="text-center">Kategori : {{ post.kategori.nama }}</h4> -->
 
@@ -39,39 +40,19 @@
         <v-card
         max-width="450"
         class="mx-2 my-4"
-        color="green accent-1"
+        color="lime lighten-5"
         >
         <h2 class="text-center my-2">Komentar</h2>
 
-        <v-list three-line>
-            <template v-for="(item, index) in items">
-                <v-subheader
-                    v-if="item.header"
-                    :key="item.header"
-                    v-text="item.header"
-                ></v-subheader>
-
-                <v-divider
-                v-else-if="item.divider"
-                :key="index"
-                :inset="item.inset"
-                ></v-divider>
-
-                <v-list-item
-                v-else
-                :key="item.title"
-                >
-                <v-list-item-avatar>
-                    <v-img :src="item.avatar"></v-img>
-                </v-list-item-avatar>
-
-                <v-list-item-content>
-                    <v-list-item-title v-html="item.title"></v-list-item-title>
-                    <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-                </v-list-item-content>
-                </v-list-item>
-            </template>
-        </v-list>
+        <v-container v-if="post">
+            <v-card
+                v-for="p in post.komentar"
+                :key="p.idkomentar"
+            >
+                <h3>{{p.penulis.user.nama}}</h3>
+                <p>{{ p.isi}}</p>
+            </v-card>
+        </v-container>
         </v-card>
 
     </v-container>
@@ -83,6 +64,7 @@ import api from '@/api'
 export default {
     data: () => ({
         post: null,
+        komentar: null,
 
         items: [
         {

@@ -8,9 +8,10 @@ use App\Models\Post;
 
 class detailpostcontroller extends Controller
 {
-    public function detail($idpost) {
-    	$post = Post::with('komentar.penulis')->find($idpost);
+    public function detail($idpost)
+    {
+        $post = Post::with('komentar.penulis.user')->find($idpost);
 
-    	return $post;
+        return $post;
     }
 }
