@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container v-if="post">
         <div class="text-left">
             <v-btn
                 :to="{ name: 'home' }" exact
@@ -19,9 +19,9 @@
 
         <v-card class="mx-1 px-2">
             <v-img
-            class="my-0"
-            src="@/assets/qodKzDHqIo451YOaIbzb64uAymeoFUAl23wUkcdd.jpeg"
-            height="200px"
+                class="my-0"
+                :src="gambar(post.file_gambar)"
+                height="200px"
             ></v-img>
 
             <h1 class="text-center">{{ post.judul }}</h1>
@@ -83,7 +83,6 @@ import api from '@/api'
 export default {
     data: () => ({
         post: null,
-        kategori: null,
 
         items: [
         {
@@ -118,14 +117,18 @@ export default {
       ],
     }),
 
+    methods: {
+        gambar(url) {
+            return process.env.VUE_APP_API_URL + url.replace('public', 'storage')
+        }
+    },
+
     async created() {
         let post = await api.get('post/' + this.$route.params.id)
         this.post = post.data
+    },
 
-        let kategori = await api.get('kategori')
-        this.kategori = kategori.data
-    }
 }
 
- 
+
 </script>

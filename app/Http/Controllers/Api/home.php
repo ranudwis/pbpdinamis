@@ -11,7 +11,7 @@ class home extends Controller
 {
     public function lihat()
     {
-        $post = Post::with('kategori')->get();
+        $post = Post::with('kategori', 'penulis.user')->get();
 
         return $post;
     }
@@ -19,7 +19,7 @@ class home extends Controller
     public function sortKategori($idkategori)
     {
         $kategoriDipilih = Kategori::find($idkategori);
-        $post = $kategoriDipilih->post;
+        $post = $kategoriDipilih->post()->with('kategori', 'penulis.user')->get();
 
         return $post;
     }
@@ -34,7 +34,7 @@ class home extends Controller
     public function searching(Request $request)
     {
         $post = Post::where('judul', 'like', '%' . $request->pencarian . '%')
-            ->with('kategori')
+            ->with('kategori', 'penulis.user')
             ->get();
 
         return $post;
