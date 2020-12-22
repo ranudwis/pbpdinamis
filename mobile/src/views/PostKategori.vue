@@ -1,6 +1,22 @@
 <template>
     <v-container>
-        Ini halaman postingan dengan kategori tertentu {{ $route.params }}
+        <v-btn
+            :to="{ name: 'kategori' }"
+            class="ma-2"
+            color="red darken-4"
+            dark
+            >
+            <v-icon
+              dark
+              left
+                >
+              mdi-arrow-left
+            </v-icon>Back
+        </v-btn>
+        
+
+
+
     </v-container>
 </template>
 
