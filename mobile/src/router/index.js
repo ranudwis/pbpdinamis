@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import Kategori from '@/views/Kategori'
 import PostKategori from '@/views/PostKategori'
 import CariPost from '@/views/CariPost'
+import DetailPost from '@/views/DetailPost'
 
 Vue.use(VueRouter)
 
@@ -25,9 +26,9 @@ const routes = [
         name: 'caripost',
         component: CariPost,
     }, {
-        path: '/caripost/judul',
-        name: 'caripost',
-        component: CariPost,
+        path: '/post/:id',
+        name: 'detailpost',
+        component: DetailPost,
     }
 ]
 
