@@ -1,7 +1,15 @@
 <template>
     <v-app>
         <v-app-bar app color="white">
-            Dunia Penuh Cerita
+            <!-- <v-btn icon>
+                <v-icon>
+                    mdi-arrow-left
+                </v-icon>
+            </v-btn> -->
+
+            <v-toolbar-title>
+                Dunia Penuh Cerita
+            </v-toolbar-title>
         </v-app-bar>
 
         <v-main>
