@@ -6,12 +6,15 @@
                 sm="6"
             >
 
-                <v-text-field
+                <v-text-field 
+                    v-model="variabel"
+                    @keyup.enter="cari"
                     label="Search for Post"
                     prepend-icon="mdi-magnify"
                 ></v-text-field>
 
-                <v-container v-if="post">
+                <v-container v-if="post" class="d-flex flex-column align-center mx-auto">
+                    
                     <v-card
                         v-for="p in post"
                         :key="p.idpost"
@@ -19,10 +22,9 @@
                         max-width="344"
                         color="orange lighten-5"
                     >
-                    
                         <v-img
                             class=" my-0"
-                            src="@/assets/06o89NygsKFcyMpfaoesP0gtUOEPxvEfbHWkoK8M.jpeg"
+                            src="@/assets/qodKzDHqIo451YOaIbzb64uAymeoFUAl23wUkcdd.jpeg"
                             height="200px"
                         ></v-img>
 
@@ -41,6 +43,7 @@
                                 class="mb-4 rounded-b-lg"
                                 color="teal darken-1"
                                     dark
+                                :to="{ name: 'detailpost', params: {id: p.idpost} }"
                             >
                                 DETAIL POST
                             </v-btn>
@@ -57,25 +60,15 @@ import api from '@/api'
 
 export default {
     data: () => ({
+        variabel: null,
         post: null,
-        kategori: null,
-        users: null,
-        penulis: null,
     }),
 
-    async created() {
-
-        let post = await api.get('post')
-        this.post = post.data
-
-        let kategori = await api.get('kategori')
-        this.kategori = kategori.data
-
-        let users = await api.get('users')
-        this.users = users.data
-
-        let penulis = await api.get('penulis')
-        this.penulis = penulis.data
+    methods: {
+        async cari() {
+            let post = await api.get('cari', { params: { pencarian: this.variabel } })
+            this.post = post.data
+        }
     }
 }
 </script>

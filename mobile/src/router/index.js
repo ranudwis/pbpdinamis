@@ -24,11 +24,11 @@ const routes = [
     }, {
         path: '/caripost',
         name: 'caripost',
-        component: CariPost,
+        component: CariPost
     }, {
         path: '/post/:id',
         name: 'detailpost',
-        component: DetailPost,
+        component: DetailPost
     }
 ]
 
