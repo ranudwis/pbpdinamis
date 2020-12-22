@@ -1,18 +1,11 @@
 <template>
     <v-container>
-        <v-btn
-            :to="{ name: 'kategori' }"
-            class="ma-2"
-            color="red darken-2"
-            dark
-            >
-            <v-icon
-              dark
-              left
-                >
-              mdi-arrow-left
-            </v-icon>kembali
-        </v-btn>
+        <loading-bar v-if="! post"></loading-bar>
+
+        <div v-else-if="post.length == 0" class="text-center">
+            Tidak ada postingan
+        </div>
+
         <post-item
             v-for="p in post"
             :key="p.idpost"
@@ -24,13 +17,15 @@
 <script>
 import api from '@/api'
 import PostItem from '@/components/PostItem'
+import LoadingBar from '@/components/LoadingBar'
 
 export default {
     data: () => ({
         post: null
     }),
     components: {
-        PostItem
+        PostItem,
+        LoadingBar
     },
     async created() {
         let post = await api.get('post/kategori/' + this.$route.params.id)

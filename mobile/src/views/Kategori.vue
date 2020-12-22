@@ -14,15 +14,22 @@
             </v-card-text>
         </v-card>
     </v-container>
+
+    <loading-bar v-else></loading-bar>
 </template>
 
 <script>
 import api from '@/api'
+import LoadingBar from '@/components/LoadingBar'
 
 export default {
     data: () => ({
         kategori: null,
     }),
+
+    components: {
+        LoadingBar
+    },
 
     async created() {
         let kategori = await api.get('kategori')

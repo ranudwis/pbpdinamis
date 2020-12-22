@@ -5,21 +5,23 @@
                 cols="12"
                 sm="6"
             >
-
                 <v-text-field
                     v-model="variabel"
                     @keyup.enter="cari"
                     label="Search for Post"
                     prepend-icon="mdi-magnify"
+                    color="orange"
                 ></v-text-field>
 
-                <v-container v-if="post" class="d-flex flex-column align-center mx-auto">
+                <v-container v-if="post && !loading" class="d-flex flex-column align-center mx-auto">
                     <post-item
                         v-for="p in post"
                         :key="p.idpost"
                         :p="p"
                     ></post-item>
                 </v-container>
+
+                <loading-bar v-else-if="loading"></loading-bar>
             </v-col>
         </v-row>
     </v-container>
@@ -28,20 +30,28 @@
 <script>
 import api from '@/api'
 import PostItem from '@/components/PostItem'
+import LoadingBar from '@/components/LoadingBar'
 
 export default {
     components: {
-        PostItem
+        PostItem,
+        LoadingBar
     },
 
     data: () => ({
         variabel: null,
         post: null,
+        loading: false
     }),
 
     methods: {
         async cari() {
+            this.post = null
+            this.loading = true
+
             let post = await api.get('cari', { params: { pencarian: this.variabel } })
+
+            this.loading = false
             this.post = post.data
         }
     }

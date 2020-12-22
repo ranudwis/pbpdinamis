@@ -1,7 +1,19 @@
 <template>
     <v-app>
         <v-app-bar app color="white">
-            Dunia Penuh Cerita
+            <v-btn
+                v-if="! $route.meta.root"
+                icon
+                @click="$router.back()"
+            >
+                <v-icon>
+                    mdi-arrow-left
+                </v-icon>
+            </v-btn>
+
+            <v-toolbar-title>
+                Dunia Penuh Cerita
+            </v-toolbar-title>
         </v-app-bar>
 
         <v-main>
@@ -9,19 +21,19 @@
         </v-main>
 
         <v-bottom-navigation app grow color="orange">
-            <v-btn :to="{ name: 'home' }" exact>
+            <v-btn :to="{ name: 'home' }">
                 <span>Home</span>
 
                 <v-icon>mdi-home</v-icon>
             </v-btn>
 
-            <v-btn :to="{ name: 'kategori' }" exact>
+            <v-btn :to="{ name: 'kategori' }">
                 <span>Kategori</span>
 
                 <v-icon>mdi-view-sequential</v-icon>
             </v-btn>
 
-            <v-btn :to="{ name: 'caripost' }" exact>
+            <v-btn :to="{ name: 'caripost' }">
                 <span>Cari</span>
 
                 <v-icon>mdi-magnify</v-icon>
