@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="d-flex flex-column align-center mx-auto">
         <loading-bar v-if="! post"></loading-bar>
 
         <div v-else-if="post.length == 0" class="text-center">

@@ -47,3 +47,9 @@ export default {
     name: 'App',
 }
 </script>
+
+<style scoped>
+.v-btn:not(.v-btn--round).v-size--default {
+    height: inherit;
+}
+</style>
