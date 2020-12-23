@@ -12,7 +12,7 @@
             </v-btn>
 
             <v-toolbar-title>
-                Dunia Penuh Cerita
+                {{ $store.state.judul }}
             </v-toolbar-title>
         </v-app-bar>
 

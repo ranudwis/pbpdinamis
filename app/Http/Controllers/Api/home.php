@@ -21,7 +21,10 @@ class home extends Controller
         $kategoriDipilih = Kategori::find($idkategori);
         $post = $kategoriDipilih->post()->with('kategori', 'penulis.user')->get();
 
-        return $post;
+        return [
+            'kategori' => $kategoriDipilih->nama,
+            'post' => $post
+        ];
     }
 
     public function kategori()

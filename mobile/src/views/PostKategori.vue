@@ -30,7 +30,13 @@ export default {
     async created() {
         let post = await api.get('post/kategori/' + this.$route.params.id)
 
-        this.post = post.data
+        this.$store.commit('setJudul', post.data.kategori)
+
+        this.post = post.data.post
+    },
+
+    destroyed() {
+        this.$store.commit('resetJudul')
     }
 }
 </script>
